@@ -4,5 +4,4 @@
 ### * Sergio Rodriguez
 ### * Sergio Salcedo
 ## Diagrama UML
-![UML](https://imgur.com/a/vhoWjhc)
-
+[UML](https://imgur.com/a/vhoWjhc)
