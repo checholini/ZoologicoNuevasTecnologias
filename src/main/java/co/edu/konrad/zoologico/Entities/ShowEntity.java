@@ -29,6 +29,12 @@ public class ShowEntity implements Serializable {
    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long idShow;
     /**
+     * Attr: Id de encargado
+     */
+    @ManyToOne
+     @JoinColumn(name = "id_encargado")
+     private EncargadoEntity idEncargado;
+    /**
      * Attr: Id del zoologico
      */
     @ManyToOne
