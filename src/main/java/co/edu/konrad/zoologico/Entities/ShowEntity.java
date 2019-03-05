@@ -49,7 +49,9 @@ public class ShowEntity implements Serializable {
      */
     @Column(name="id_documento")
      private Long idDocumento;
-    
+    /**
+     * Attr: Id de la fecha y hora// Cambiar a llave compuesta relacionarlos
+     */
     @ManyToOne
      @JoinColumn(name = "id_fecha_lugar")
      private FechaHoraEntity idFecHo;
