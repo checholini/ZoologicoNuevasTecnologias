@@ -53,13 +53,6 @@ public class AnimalEntity implements Serializable{
     private AlimentacionEntity idAlimentacion ;
     
     /*
-    * Llave Foranea Cuidador
-    */
-    @ManyToOne
-    @JoinColumn(name = "id_cuidador")
-    private CuidadorEntity idCuidador;
-    
-    /*
     * Atributo Nombre
     */
     @Column(name = "nom_animal")
@@ -83,6 +76,13 @@ public class AnimalEntity implements Serializable{
     @Column(name = "especie_animal")
     private String especieAnimal;
     
+    
+    /*
+    * Llave foranea Cuidador
+    * ---Aun no implementado---
+    */
+
+
 }
 
 
