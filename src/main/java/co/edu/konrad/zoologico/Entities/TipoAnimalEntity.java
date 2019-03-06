@@ -21,10 +21,16 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tipo_animal")
 public class TipoAnimalEntity implements Serializable{
+    /**
+    * Llave primaria Tipo Animal
+    */
     @Id
     @Column(name = "id_tipo_animal")
     private int idTipoAnimal;
     
+    /**
+    * Atributo nombre
+    */
     @Column(name = "nom_tipo_animal")
     private String nombreTipoAnimal;
     

@@ -22,10 +22,10 @@ public class RatingAnimalPeristence {
     @PersistenceContext(unitName = "zoologicoPU")
     protected EntityManager em;
     
-   /*
+   /**
     * Metodo para insertar un rating del animal
-    * @param RatingAnimalEntity
-    * @return RatingAnimalEntity
+    * @param ra Objeto de tipo RatingAnimalEntity
+    * @return Objeto de tipo RatingAnimalEntity almacenado
     */
     
     public RatingAnimalEntity insert(RatingAnimalEntity ra){
@@ -33,8 +33,9 @@ public class RatingAnimalPeristence {
         return ra;
     }
     
-    /*
+    /**
     * Metodo para listar todos los ratings de los animal
+    * @return Lista con todos los Objetos tipo RatingAnimalEntity
     */
     
     public List<RatingAnimalEntity> findAll(){ 
@@ -42,28 +43,28 @@ public class RatingAnimalPeristence {
         return results.getResultList();
     }
     
-    /*
+    /**
      * Metodo para encontrar por id
-     * @param RatingAnimalEntity
-     * @return 
+     * @param id Indice para buscar
+     * @return Retorna un objeto de tipo AnimalEntity
      */
     public RatingAnimalEntity find(int id){
         return em.find(RatingAnimalEntity.class, id);
     }
     
-    /*
+    /**
     * Metodo para borrar un rating del animal segun id
-    * @param RatingAnimalEntity
+    * @param id Indice para buscar
     */
     public void delete(int id){
         RatingAnimalEntity entity = em.find(RatingAnimalEntity.class,id);
         em.remove(entity);
     }
     
-    /*
+    /**
      * metodo para actualizar el rating de un animal
-     * @param RatingAnimalEntity
-     * @return 
+     * @param ra Objeto de tipo RatingAnimalEntity
+     * @return Objeto de tipo RatingAnimalEntity actualizado
      */
     public RatingAnimalEntity update(RatingAnimalEntity ra){
         return em.merge(ra);

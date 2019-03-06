@@ -25,9 +25,9 @@ public class TipoAnimalPersistence {
     @PersistenceContext(unitName = "zoologicoPU")
     protected EntityManager em;
     
-    /*
+    /**
     * Metodo para insertar tipos de animales
-    * @param TipoAnimalEntity
+    * @param ta objeto de TipoAnimalEntity
     * @return TipoAnimalEntity
     */
     public TipoAnimalEntity insert(TipoAnimalEntity ta){
@@ -35,35 +35,36 @@ public class TipoAnimalPersistence {
         return ta;
     }
     
-    /*
+    /**
     * Metodo para listar los tipos de animales
+    * @return Lista con todos los Objetos tipo TipoAnimalEntity
     */
     public List<TipoAnimalEntity> findAll(){
         Query q = em.createQuery("select ta from TipoAnimalEntity ta");
         return q.getResultList();
     }
     
-    /*
+    /**
     * Metodo para encontrar segun id
-    * @param id
+    * @param id Indice para buscar
     * @return TipoAnimalEntity
     */
     public TipoAnimalEntity find(int id){
         return em.find(TipoAnimalEntity.class, id);
     }
     
-    /*
+    /**
     * Metodo para actualizar un registro de tipo de animal
-    * @param TipoAnimalEntity
-    * @return TipoAnimalEntity
+    * @param ta Objeto de TipoAnimalEntity
+    * @return Objeto de tipo TipoAnimalEntity actualizado
     */
     public TipoAnimalEntity update(TipoAnimalEntity ta){
         return em.merge(ta);
     }
     
-    /*
+    /**
     * Metodo para eliminar un registro de tipo animal
-    * @param id
+    * @param id Indice para buscar
     */    
     public void delete(int id){
         TipoAnimalEntity entity = find(id);

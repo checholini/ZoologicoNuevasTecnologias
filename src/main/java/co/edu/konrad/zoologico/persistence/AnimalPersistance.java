@@ -25,45 +25,46 @@ public class AnimalPersistance {
     @PersistenceContext(unitName = "zoologicoPU")
     protected EntityManager em;
     
-    /*
+    /**
     * Metodo para insertar a los animales
-    * @param AnimalEntity
-    * @return AnimalEntity
+    * @param a Objeto tipo AnimalEntity
+    * @return Objeto almacenado de tipo AnimalEntity
     */
     public AnimalEntity insert(AnimalEntity a){
         em.persist(a);
         return a;
     }
     
-    /*
+    /**
     * Metodo para listar todos los animales
+    * @return Devuelve una lista con todos los objetos de tipo AnimalEntity
     */
     public List<AnimalEntity> findAll(){
         Query q = em.createQuery("select ta from AnimalEntity ta");
         return q.getResultList();
     }
     
-    /*
+    /**
     * Metodo para encontrar segun id
-    * @param id
-    * @return AnimalEntity
+    * @param id Indice para buscar
+    * @return Retorna un objeto de tipo AnimalEntity
     */
     public AnimalEntity find(int id){
         return em.find(AnimalEntity.class, id);
     }
     
-    /*
+    /**
     * Metodo para actualizar los datos de un animal
-    * @param AnimalEntity
-    * @return AnimalEntity
+    * @param ta Objeto tipo AnimalEntity 
+    * @return Objeto AnimalEntity actualizado
     */
     public AnimalEntity update(AnimalEntity ta){
         return em.merge(ta);
     }
     
-    /*
+    /**
     * Metodo para eliminar un animal
-    * @param id
+    * @param id Indice para buscar
     */    
     public void delete(int id){
         AnimalEntity entity = find(id);

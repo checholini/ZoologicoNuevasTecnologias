@@ -17,13 +17,13 @@ import javax.persistence.Table;
 
 /**
  * Creacion Tabla Animal 
- * @author SergioRoodriguez
+ * @author SergioRodriguez
  * 
  */
 @Entity
 @Table(name = "animal")
 public class AnimalEntity implements Serializable{
-    /*
+    /**
     * Llave primaria
     */
     @Id
@@ -31,58 +31,58 @@ public class AnimalEntity implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long idAnimal;
     
-    /*
+    /**
     * Llave foranea Zoo
     */
     @ManyToOne
     @JoinColumn(name = "id_zoo")
     private ZooEntity idZoo;    
     
-    /*
+    /**
     * Llave foranea tipo animal
     */
     @ManyToOne
     @JoinColumn(name = "id_tipo_animal")
     private TipoAnimalEntity idTipoAnimal;    
     
-    /*
+    /**
     * Llave Foranea Alimentacion
     */
     @ManyToOne
     @JoinColumn(name = "id_alimentacion")
     private AlimentacionEntity idAlimentacion ;
     
-    /*
+    /**
+    * Llave Foranea Cuidador
+    */
+    @ManyToOne
+    @JoinColumn(name = "id_cuidador")
+    private CuidadorEntity idCuidador;
+    
+    /**
     * Atributo Nombre
     */
     @Column(name = "nom_animal")
     private String nombre;
     
-    /*
+    /**
     * Atributo nombre cientifico
     */
     @Column(name = "nom_cientifico_animal")
     private String nombreCientificoAnimal;
     
-    /*
+    /**
     * Atributo Descripcion 
     */
     @Column(name = "desc_animal")
     private String descripcionAnimal;
     
-    /*
+    /**
     * Atributo especie
     */
     @Column(name = "especie_animal")
     private String especieAnimal;
     
-    
-    /*
-    * Llave foranea Cuidador
-    * ---Aun no implementado---
-    */
-
-
 }
 
 

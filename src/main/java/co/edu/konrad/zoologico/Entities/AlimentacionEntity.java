@@ -18,37 +18,38 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "alimentacion")
 public class AlimentacionEntity implements Serializable{
-    /*
+    /**
     * Llave primaria
     */
     @Id
     @Column(name = "id_alimentacion")
     private int idAlimentacion;
     
-    /*
+    /**
     * Atributo nombre
     */
     @Column(name = "nom_alimento")
     private String nombreAlimento;
     
-    /*
+    /**
     * Atributo cantidad
     */
     @Column(name = "cantidad_alimento")
     private String cantidadAlimento;
     
-    /*
+    /**
     * Atributo horario dia
     */
     @Column(name = "horario_mañana")
     private String horarioMañana;
-    /*
+    
+    /**
     * Atributo horario tarde
     */
     @Column(name = "horario_tarde")
     private String horarioTarde;
 
-    /*
+    /**
     * Constructor 
     */
     public AlimentacionEntity() {

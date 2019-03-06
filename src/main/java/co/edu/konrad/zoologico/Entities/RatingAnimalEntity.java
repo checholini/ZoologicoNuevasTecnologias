@@ -19,33 +19,33 @@ import javax.persistence.ManyToOne;
 @Entity
 public class RatingAnimalEntity implements Serializable{
     
-    /*
+    /**
     * Creacion llave primaria
     */
     @Id
     @Column(name = "id_rating_animal")
     private long idRatingAnimal;
     
-    /*
+    /**
     * Creacion llave foranea animal
     */
     @ManyToOne
     @JoinColumn(name = "id_animal_fk")
     private AnimalEntity idAnimal;
     
-    /*
+    /**
     * Atributo calificacion
     */
     @Column(name = "calficacion_animal")
     private byte calificacionAnimal;
     
-    /*
+    /**
     * Atributo comentario
     */
     @Column(name = "comentario_animal")
     private String comentarioAnimal;
 
-    /*
+    /**
     * Constructor clase
     */
     public RatingAnimalEntity() {

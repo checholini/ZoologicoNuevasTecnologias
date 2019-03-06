@@ -25,10 +25,10 @@ public class AlimentacionPersistence {
     @PersistenceContext(unitName = "zoologicoPU")
     protected EntityManager em;
     
-   /*
+   /**
     * Metodo para agregar un alimento
-    * @param AlimentacionEntity
-    * @return AlimentacionEntity
+    * @param a Objeto de tipo AlimentacionEntity
+    * @return Objeto almacenado de tipo AlimentacionEntity
     */
     
     public AlimentacionEntity insert(AlimentacionEntity a){
@@ -36,8 +36,9 @@ public class AlimentacionPersistence {
         return a;
     }
     
-    /*
+    /**
     * Metodo para listar todos los alimentos
+    * @return Retorna una lista con los Objetos almacenados.
     */
     
     public List<AlimentacionEntity> findAll(){
@@ -45,31 +46,31 @@ public class AlimentacionPersistence {
         return results.getResultList();
     }
     
-    /*
+    /**
     * Metodo para encontrar por id
-    * @param id
-    * @return AlimentacionEntity
+    * @param id Indice para buscar
+    * @return Retorna un objeto de tipo AlimentacionEntity
     */
     public AlimentacionEntity find(int id){
         return em.find(AlimentacionEntity.class, id);
     }
     
-    /*
+    /**
     * Metodo para borrar un alimento segun id
-    * @param id
+    * @param id Indice para buscar
     */
     public void delete(int id){
         AlimentacionEntity entity = find(id);
         em.remove(entity);
     }
     
-    /*
+    /**
     * Metodo para modificar alimentos
-    * @param AlimentacionEntity
-    * @return AlimentacionEntity
+    * @param a Objeto de tipo AlimentacionEntity
+    * @return Retorna el objeto AlimentacionEntity actualizado
     */
-    public AlimentacionEntity update(AlimentacionEntity z){
-        return em.merge(z);
+    public AlimentacionEntity update(AlimentacionEntity a){
+        return em.merge(a);
     }
     
     
