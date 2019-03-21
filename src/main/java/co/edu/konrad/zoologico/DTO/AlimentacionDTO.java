@@ -6,10 +6,9 @@
 package co.edu.konrad.zoologico.DTO;
 
 import co.edu.konrad.zoologico.Entities.AlimentacionEntity;
-import co.edu.konrad.zoologico.Entities.AnimalEntity;
 
 /**
- *
+ * 
  * @author SergioRodriguez
  */
 public class AlimentacionDTO {
