@@ -83,6 +83,82 @@ public class AnimalEntity implements Serializable{
     @Column(name = "especie_animal")
     private String especieAnimal;
     
+    /*
+     * Getters y setters
+     */
+
+    public long getIdAnimal() {
+        return idAnimal;
+    }
+
+    public void setIdAnimal(long idAnimal) {
+        this.idAnimal = idAnimal;
+    }
+
+    public ZooEntity getIdZoo() {
+        return idZoo;
+    }
+
+    public void setIdZoo(ZooEntity idZoo) {
+        this.idZoo = idZoo;
+    }
+
+    public TipoAnimalEntity getIdTipoAnimal() {
+        return idTipoAnimal;
+    }
+
+    public void setIdTipoAnimal(TipoAnimalEntity idTipoAnimal) {
+        this.idTipoAnimal = idTipoAnimal;
+    }
+
+    public AlimentacionEntity getIdAlimentacion() {
+        return idAlimentacion;
+    }
+
+    public void setIdAlimentacion(AlimentacionEntity idAlimentacion) {
+        this.idAlimentacion = idAlimentacion;
+    }
+
+    public CuidadorEntity getIdCuidador() {
+        return idCuidador;
+    }
+
+    public void setIdCuidador(CuidadorEntity idCuidador) {
+        this.idCuidador = idCuidador;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombreCientificoAnimal() {
+        return nombreCientificoAnimal;
+    }
+
+    public void setNombreCientificoAnimal(String nombreCientificoAnimal) {
+        this.nombreCientificoAnimal = nombreCientificoAnimal;
+    }
+
+    public String getDescripcionAnimal() {
+        return descripcionAnimal;
+    }
+
+    public void setDescripcionAnimal(String descripcionAnimal) {
+        this.descripcionAnimal = descripcionAnimal;
+    }
+
+    public String getEspecieAnimal() {
+        return especieAnimal;
+    }
+
+    public void setEspecieAnimal(String especieAnimal) {
+        this.especieAnimal = especieAnimal;
+    }
+    
 }
 
 
