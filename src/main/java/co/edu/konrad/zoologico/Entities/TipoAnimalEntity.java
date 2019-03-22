@@ -34,4 +34,25 @@ public class TipoAnimalEntity implements Serializable{
     @Column(name = "nom_tipo_animal")
     private String nombreTipoAnimal;
     
+    /*
+     * Getters y Setters
+     */
+
+    public int getIdTipoAnimal() {
+        return idTipoAnimal;
+    }
+
+    public void setIdTipoAnimal(int idTipoAnimal) {
+        this.idTipoAnimal = idTipoAnimal;
+    }
+
+    public String getNombreTipoAnimal() {
+        return nombreTipoAnimal;
+    }
+
+    public void setNombreTipoAnimal(String nombreTipoAnimal) {
+        this.nombreTipoAnimal = nombreTipoAnimal;
+    }
+    
+    
 }
