@@ -5,8 +5,8 @@
  */
 package co.edu.konrad.zoologico.logic;
 
-import co.edu.konrad.zoologico.Entities.ZooEntity;
-import co.edu.konrad.zoologico.persistence.ZooPersistence;
+import co.edu.konrad.zoologico.Entities.LugarEntity;
+import co.edu.konrad.zoologico.persistence.LugarPersistence;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -17,54 +17,54 @@ import javax.inject.Inject;
  */
 
 @Stateless
-public class ZooLogic {
+public class LugarLogic {
     @Inject
-    private ZooPersistence persistence;
+    private LugarPersistence persistence;
     
     /**
-     * Metodo para obtener todos los zoologicos
+     * Metodo para obtener todos los lugares
      * @return 
      */
-    public List<ZooEntity> obtenerZoos(){
-        List<ZooEntity> zoo = persistence.findAll();
-        return zoo;
+    public List<LugarEntity> obtenerLugares(){
+        List<LugarEntity> lugar = persistence.findAll();
+        return lugar;
     }
     /**
      * Metodo para retornar por id
      * @param id
      * @return 
      */
-    public ZooEntity obtenerZooPorId(int id){
-        ZooEntity zoo=persistence.find(id);
-        if(zoo == null){
+    public LugarEntity obtenerLugarPorId(int id){
+        LugarEntity lugar=persistence.find(id);
+        if(lugar == null){
             throw new IllegalArgumentException("Producto Solicitado no existe");
         }
-        return zoo;
+        return lugar;
     }
     /**
-     * metodo para crear un zoo
+     * metodo para crear un lugar
      * @param entity
      * @return 
      */
-    public ZooEntity crearZoo(ZooEntity entity){
+    public LugarEntity crearLugar(LugarEntity entity){
         persistence.insert(entity);
         return entity;
     }
     /**
-     * Actualizar un zoo
+     * Actualizar un lugar
      * @param entity
      * @param id
      * @return 
      */
-    public ZooEntity actualizarZoo(ZooEntity entity, int id){
-      ZooEntity zoo = persistence.update(entity);
-        return zoo;
+    public LugarEntity actualizarLugar(LugarEntity entity, int id){
+      LugarEntity lugar = persistence.update(entity);
+        return lugar;
     }
     /**
-     * eliminar un zoo
+     * eliminar un lugar
      * @param id 
      */
-    public void eliminarZoo (int id){
+    public void eliminarLugar (int id){
         persistence.delete(id);
     }
 }
