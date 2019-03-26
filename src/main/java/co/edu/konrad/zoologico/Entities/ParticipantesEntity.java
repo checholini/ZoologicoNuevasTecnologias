@@ -35,7 +35,7 @@ public class ParticipantesEntity implements Serializable{
      */
     @ManyToOne
     @JoinColumn(name = "id_Animal")
-    private ZooEntity idAnimal;
+    private AnimalEntity idAnimal;
     /**
      * Attr: Id de show
      */
@@ -55,11 +55,11 @@ public class ParticipantesEntity implements Serializable{
         this.idParticipantes = idParticipantes;
     }
 
-    public ZooEntity getIdAnimal() {
+    public AnimalEntity getIdAnimal() {
         return idAnimal;
     }
 
-    public void setIdAnimal(ZooEntity idAnimal) {
+    public void setIdAnimal(AnimalEntity idAnimal) {
         this.idAnimal = idAnimal;
     }
 
