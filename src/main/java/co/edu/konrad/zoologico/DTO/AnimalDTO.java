@@ -10,6 +10,8 @@ import co.edu.konrad.zoologico.Entities.AnimalEntity;
 import co.edu.konrad.zoologico.Entities.CuidadorEntity;
 import co.edu.konrad.zoologico.Entities.TipoAnimalEntity;
 import co.edu.konrad.zoologico.Entities.ZooEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -101,5 +103,93 @@ public class AnimalDTO {
        return animal;
    }
     
+   /**
+     * Metodo para retornar una lista de Animales
+     * @param animalList Lista de Entities
+     * @return Lista de DTO 
+     */
+    public static List<AnimalDTO> toAnimalList(List<AnimalEntity> animalList){
+        List<AnimalDTO> listaAnimales = new ArrayList<>();
+        for(int i = 0; i<animalList.size(); i++){
+            listaAnimales.add(new AnimalDTO(animalList.get(i)));
+        }
+        return listaAnimales;
+    }
     
+    /*
+     * Getters y Setters
+     */
+
+    public long getIdAnimal() {
+        return idAnimal;
+    }
+
+    public void setIdAnimal(long idAnimal) {
+        this.idAnimal = idAnimal;
+    }
+
+    public ZooEntity getIdZoo() {
+        return idZoo;
+    }
+
+    public void setIdZoo(ZooEntity idZoo) {
+        this.idZoo = idZoo;
+    }
+
+    public TipoAnimalEntity getIdTipoAnimal() {
+        return idTipoAnimal;
+    }
+
+    public void setIdTipoAnimal(TipoAnimalEntity idTipoAnimal) {
+        this.idTipoAnimal = idTipoAnimal;
+    }
+
+    public AlimentacionEntity getIdAlimentacion() {
+        return idAlimentacion;
+    }
+
+    public void setIdAlimentacion(AlimentacionEntity idAlimentacion) {
+        this.idAlimentacion = idAlimentacion;
+    }
+
+    public CuidadorEntity getIdCuidador() {
+        return idCuidador;
+    }
+
+    public void setIdCuidador(CuidadorEntity idCuidador) {
+        this.idCuidador = idCuidador;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombreCientificoAnimal() {
+        return nombreCientificoAnimal;
+    }
+
+    public void setNombreCientificoAnimal(String nombreCientificoAnimal) {
+        this.nombreCientificoAnimal = nombreCientificoAnimal;
+    }
+
+    public String getDescripcionAnimal() {
+        return descripcionAnimal;
+    }
+
+    public void setDescripcionAnimal(String descripcionAnimal) {
+        this.descripcionAnimal = descripcionAnimal;
+    }
+
+    public String getEspecieAnimal() {
+        return especieAnimal;
+    }
+
+    public void setEspecieAnimal(String especieAnimal) {
+        this.especieAnimal = especieAnimal;
+    }
+        
 }

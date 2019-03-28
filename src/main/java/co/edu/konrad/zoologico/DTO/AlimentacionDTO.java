@@ -6,6 +6,8 @@
 package co.edu.konrad.zoologico.DTO;
 
 import co.edu.konrad.zoologico.Entities.AlimentacionEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 
@@ -68,6 +70,63 @@ public class AlimentacionDTO {
         alimentacion.setIdAlimentacion(this.idAlimentacion);
         alimentacion.setNombreAlimento(this.nombreAlimento);
         return alimentacion;
+    }
+    
+    /**
+     * Metodo para retornar una lista de Alimentacion
+     * @param alimentacionList Lista de Entities
+     * @return Lista de DTO 
+     */
+    public static List<AlimentacionDTO> toAlimentacionList(List<AlimentacionEntity> alimentacionList){
+        List<AlimentacionDTO> listaAlimentacion = new ArrayList<>();
+        for(int i = 0; i<alimentacionList.size(); i++){
+            listaAlimentacion.add(new AlimentacionDTO(alimentacionList.get(i)));
+        }
+        return listaAlimentacion;
+    }
+    
+    /*
+     * Getters y Setters
+     */
+
+    public int getIdAlimentacion() {
+        return idAlimentacion;
+    }
+
+    public void setIdAlimentacion(int idAlimentacion) {
+        this.idAlimentacion = idAlimentacion;
+    }
+
+    public String getNombreAlimento() {
+        return nombreAlimento;
+    }
+
+    public void setNombreAlimento(String nombreAlimento) {
+        this.nombreAlimento = nombreAlimento;
+    }
+
+    public String getCantidadAlimento() {
+        return cantidadAlimento;
+    }
+
+    public void setCantidadAlimento(String cantidadAlimento) {
+        this.cantidadAlimento = cantidadAlimento;
+    }
+
+    public String getHorarioMañana() {
+        return horarioMañana;
+    }
+
+    public void setHorarioMañana(String horarioMañana) {
+        this.horarioMañana = horarioMañana;
+    }
+
+    public String getHorarioTarde() {
+        return horarioTarde;
+    }
+
+    public void setHorarioTarde(String horarioTarde) {
+        this.horarioTarde = horarioTarde;
     }
        
 }
