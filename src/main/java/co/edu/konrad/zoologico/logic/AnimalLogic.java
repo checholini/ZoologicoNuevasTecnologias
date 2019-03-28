@@ -8,12 +8,14 @@ package co.edu.konrad.zoologico.logic;
 import co.edu.konrad.zoologico.Entities.AnimalEntity;
 import co.edu.konrad.zoologico.persistence.AnimalPersistance;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  * Logic Animal
  * @author SergioRodriguez
  */
+@Stateless
 public class AnimalLogic {
     /**
      * Inyeccion de persistence
