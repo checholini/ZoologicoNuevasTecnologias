@@ -48,13 +48,15 @@ public class ShowEntity implements Serializable {
     /**
      * Attr: Id del tipo de documento// Cambiar a tipo de documento para relacionarlo
      */
-    @Column(name="tipo_documento")
-     private Long tipoDocumento;
+    @ManyToOne
+     @JoinColumn(name = "id_tipo_documento")
+     private TipoDocumentoEntity tipoDocumento;
     /**
      * Attr: Id del documento// Cambiar a tipo de id para relacionarlos
      */
-    @Column(name="id_documento")
-     private Long idDocumento;
+    @ManyToOne
+     @JoinColumn(name = "id_documento_encargado")
+     private DocumentoEntity idDocumento;
     /**
      * Attr: Id de la fecha y hora// Cambiar a llave compuesta relacionarlos
      */
@@ -77,11 +79,11 @@ public class ShowEntity implements Serializable {
         return nomShow;
     }
 
-    public Long getTipoDocumento() {
+    public TipoDocumentoEntity getTipoDocumento() {
         return tipoDocumento;
     }
 
-    public Long getIdDocumento() {
+    public DocumentoEntity getIdDocumento() {
         return idDocumento;
     }
 
@@ -93,6 +95,10 @@ public class ShowEntity implements Serializable {
         this.idShow = idShow;
     }
 
+    public EncargadoEntity getIdEncargado() {
+        return idEncargado;
+    }
+
     public void setIdZoo(ZooEntity idZoo) {
         this.idZoo = idZoo;
     }
@@ -101,13 +107,18 @@ public class ShowEntity implements Serializable {
         this.nomShow = nomShow;
     }
 
-    public void setTipoDocumento(Long tipoDocumento) {
+    public void setIdEncargado(EncargadoEntity idEncargado) {
+        this.idEncargado = idEncargado;
+    }
+
+    public void setTipoDocumento(TipoDocumentoEntity tipoDocumento) {
         this.tipoDocumento = tipoDocumento;
     }
 
-    public void setIdDocumento(Long idDocumento) {
+    public void setIdDocumento(DocumentoEntity idDocumento) {
         this.idDocumento = idDocumento;
     }
+    
 
     public void setIdFecHo(FechaHoraEntity idFecHo) {
         this.idFecHo = idFecHo;
