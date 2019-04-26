@@ -26,5 +26,10 @@ public class ApplicationConfig extends Application{
     
     public void addResourseClasses(Set<Class<?>> resources){
         resources.add(co.edu.konrad.zoologico.resources.AlimentacionResource.class);
+        resources.add(co.edu.konrad.zoologico.resources.FechaHoraResource.class);
+        resources.add(co.edu.konrad.zoologico.resources.ShowResource.class);
+        resources.add(co.edu.konrad.zoologico.resources.RatingShowResource.class);
+        resources.add(co.edu.konrad.zoologico.resources.LugarResource.class);
+        resources.add(co.edu.konrad.zoologico.resources.ZooResource.class);
     }
 }
