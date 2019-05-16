@@ -31,17 +31,17 @@ import javax.ws.rs.core.MediaType;
 public class AnimalResource {
     @EJB
     private AnimalLogic animal;
-    
+
     /**
      * Metodo para retornar todos los datos de animal
-     * @return List animalDTO 
+     * @return List animalDTO
      */
     @GET
     public List<AnimalDTO> getAlimentancionList(){
         List<AnimalEntity> animales = animal.getAllanimales();
         return AnimalDTO.toAnimalList(animales);
     }
-    
+
     /**
      * Obtiene un animal segun un id
      * @param id de Busqueda
@@ -49,24 +49,24 @@ public class AnimalResource {
      */
     @GET
     @Path("{id: \\d+}")
-    public AnimalDTO getanimal(@PathParam("id") int id){
+    public AnimalDTO getanimal(@PathParam("id") long id){
         AnimalEntity animalE = animal.getanimalById(id);
         if(animalE == null){
             throw new RuntimeException("El animal con id "+id+" no existe");
         }
         return new AnimalDTO(animal.createAnimal(animalE));
     }
-    
+
     /**
      * Metodo para crear una animal
      * @param animalDTO
-     * @return 
+     * @return
      */
     @POST
     public AnimalDTO createanimal(AnimalDTO animalDTO){
         return new AnimalDTO(animal.createAnimal(animalDTO.toEntity()));
     }
-    
+
     /**
      * Actualiza un alimento
      * @param id
@@ -81,10 +81,10 @@ public class AnimalResource {
         }
         return new AnimalDTO(animal.updateAnimal(animalE,id));
     }
-    
+
     /**
-     * Metodo para eliminar una animal    
-     * @param id 
+     * Metodo para eliminar una animal
+     * @param id
      */
     @DELETE
     @Path("{id: \\d+}")

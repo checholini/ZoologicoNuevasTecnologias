@@ -22,31 +22,31 @@ public class AnimalLogic {
      */
     @Inject
     public AnimalPersistance persistence;
-    
+
     /**
      * Obtiene una lista con todos los animales
-     * @return 
+     * @return
      */
     public List<AnimalEntity> getAllanimales(){
         List<AnimalEntity> animal = persistence.findAll();
         return animal;
     }
-    
+
     /**
      * Metodo para traer un AnimalEntity segun id
      * @param id Parametro de busqueda
      * @return Animal encontrado
      */
-    public AnimalEntity getanimalById(int id){
+    public AnimalEntity getanimalById(long id){
         AnimalEntity animal = persistence.find(id);
         if (animal == null) {
             throw new IllegalArgumentException("El animal solicitado no existe");
         }
         return animal;
     }
-    
+
     /**
-     * Metodo para crear un Animal 
+     * Metodo para crear un Animal
      * @param entity Objeto a almacenar
      * @return Animal creado
      */
@@ -54,7 +54,7 @@ public class AnimalLogic {
         persistence.insert(entity);
         return entity;
     }
-    
+
     /**
      * Metodo par actualizar la informacion de un Animal
      * @param entity Animal a actualizar
@@ -65,7 +65,7 @@ public class AnimalLogic {
         AnimalEntity animal = persistence.update(entity);
         return animal;
     }
-    
+
     /**
      * Metodo para eliminar un Animal
      * @param id Parametro de busqueda
@@ -73,6 +73,5 @@ public class AnimalLogic {
     public void deleteAnimal(int id){
         persistence.delete(id);
     }
-    
-}
 
+}
