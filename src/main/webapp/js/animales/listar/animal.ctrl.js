@@ -1,10 +1,10 @@
-var productoModule = angular.module('animalModule');
+var animalModule = angular.module('animalModule');
 
-productoModule.controller('animalCtrl', ['$scope', '$http', '$state', function ($scope, $http, $state) {
+animalModule.controller('animalCtrl', ['$scope', '$http', '$state', function ($scope, $http, $state) {
 
         $scope.animales = new Array();
-
-        $http.get('api/animal').then(function(response){
+        console.log($scope.animales);
+        $http.get('api/animal/').then(function(response){
             console.log(response);
             $scope.animales = response.data;
         }, function(error){

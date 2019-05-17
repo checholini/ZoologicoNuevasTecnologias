@@ -1,1 +1,1 @@
-var productoModule = angular.module("animalModule", []);
+var animalModule = angular.module("animalModule", []);

@@ -4,11 +4,21 @@ var app = angular.module("Zoologico");
 app.config(["$stateProvider","$urlRouterProvider", function ($stateProvider,$urlRouterProvider){
     $urlRouterProvider.otherwise('/');
 
+    $stateProvider.state("body",{
+        url: '/',
+        views:{
+            bodyView:{
+                templateUrl: './js/body/body.html',
+                controller: 'bodyCtrl'
+            }
+        }
+    })
+
     $stateProvider.state("animales",{
        url: '/animales',
        views:{
-           animalView:{
-               templateUrl: './animales/listar/animalesDiv.html',
+           bodyView:{
+               templateUrl: './js/animales/listar/animalesDiv.html',
                controller: 'animalCtrl'
            }
        }
@@ -17,8 +27,8 @@ app.config(["$stateProvider","$urlRouterProvider", function ($stateProvider,$url
     $stateProvider.state("crearAnimal", {
        url: '/animales/crearAnimal',
        views: {
-           animalView:{
-               templateUrl: './animales/crearActualizar/crearActualizarAnimal.html',
+           bodyView:{
+               templateUrl: './js/animales/crearActualizar/crearActualizarAnimal.html',
                controller: 'caAnimalCtrl'
            }
        }
@@ -27,8 +37,8 @@ app.config(["$stateProvider","$urlRouterProvider", function ($stateProvider,$url
     $stateProvider.state("actualizarAnimal", {
        url: '/animales/actualizarProducto/:id',
        views: {
-           animalView:{
-               templateUrl: './animales/crearActualizar/crearActualizarAnimal.html',
+           bodyView:{
+               templateUrl: './js/animales/crearActualizar/crearActualizarAnimal.html',
                controller: 'caAnimalCtrl',
                params: {
                    id: null
