@@ -1,0 +1,33 @@
+<div id="tablaAnimales">
+    <table class="table">
+        <thead>
+        <th>Id</th>
+        <th>Zoologico</th>
+        <th>Tipo Animal</th>
+        <th>Alimentacion</th>
+        <th>Cuidador</th>
+        <th>Nombre</th>
+        <th>Nombre Cientifico</th>
+        <th>Descripcion</th>
+        <th>Especie</th>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="animal in animales">
+                <td>{{animal.idAnimal}}</td>
+                <td>{{animal.idZoo}}</td>
+                <td>{{animal.idTipoAnimal}}</td>
+                <td>{{animal.idAlimentacion}}</td>
+                <td>{{animal.idCuidador}}</td>
+                <td>{{animal.nombre}}</td>
+                <td>{{animal.nombreCientificoAnimal}}</td>
+                <td>{{animal.descripcionAnimal}}</td>
+                <td>{{animal.especieAnimal}}</td>
+                <td>
+                    <button class="btn btn-warning" ui-sref="actualizarAnimal({id:animal.id})">Editar</button>
+                    <button class="btn btn-danger" ng-click="eliminar(animal.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

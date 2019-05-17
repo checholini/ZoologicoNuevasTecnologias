@@ -1,0 +1,24 @@
+<div>
+    <div class="form-group">
+        <label class="control-label">Nombre del Producto</label>
+        <input class="form-control" ng-model="producto.nombreProducto" id="nombre" type="text" placeholder="nombre">
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Marca del Producto</label>
+        <input class="form-control" ng-model="producto.marca" id="marca" type="text" placeholder="marca">
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Stock</label>
+        <input class="form-control" ng-model="producto.stock" id="stock" type="text" placeholder="stock">
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Precio Unitario</label>
+        <input class="form-control" ng-model="producto.precioUnitario" id="precio" type="text" placeholder="marca">
+    </div>
+
+    <button class="btn btn-default" ng-if="!producto.id" id="crearBoton" ng-click="guardarProducto()">Crear Producto</button>
+    <button class="btn btn-default" ng-if="producto.id" id="crearBoton" ng-click="actualizarProducto()">Actualizar Producto</button>
+</div>
