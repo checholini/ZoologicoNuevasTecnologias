@@ -34,7 +34,7 @@ public class LugarLogic {
      * @param id
      * @return 
      */
-    public LugarEntity obtenerLugarPorId(int id){
+    public LugarEntity obtenerLugarPorId(long id){
         LugarEntity lugar=persistence.find(id);
         if(lugar == null){
             throw new IllegalArgumentException("Producto Solicitado no existe");
@@ -56,7 +56,7 @@ public class LugarLogic {
      * @param id
      * @return 
      */
-    public LugarEntity actualizarLugar(LugarEntity entity, int id){
+    public LugarEntity actualizarLugar(LugarEntity entity, long id){
       LugarEntity lugar = persistence.update(entity);
         return lugar;
     }
@@ -64,7 +64,7 @@ public class LugarLogic {
      * eliminar un lugar
      * @param id 
      */
-    public void eliminarLugar (int id){
+    public void eliminarLugar (long id){
         persistence.delete(id);
     }
 }

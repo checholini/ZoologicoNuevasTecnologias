@@ -44,7 +44,7 @@ public class ZooResource {
      */
     @Path("{id: \\d+}")
     @GET
-    public ZooDTO obtenerZoo(@PathParam("id") int Id){
+    public ZooDTO obtenerZoo(@PathParam("id") long Id){
         ZooEntity entity= logic.obtenerZooPorId(Id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");
@@ -68,7 +68,7 @@ public class ZooResource {
      */
     @PUT
     @Path("{id2: \\d+}")
-    public ZooDTO actualizarZoo(ZooDTO zoo,@PathParam("id2") int id){
+    public ZooDTO actualizarZoo(ZooDTO zoo,@PathParam("id2") long id){
         ZooEntity entity = logic.obtenerZooPorId(id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");
@@ -81,7 +81,7 @@ public class ZooResource {
      */
     @Path("{id3: \\d+}")
     @DELETE
-    public void eliminarZoo(@PathParam("id3") int id){
+    public void eliminarZoo(@PathParam("id3") long id){
         ZooEntity entity = logic.obtenerZooPorId(id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");

@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class LugarDTO {
     
-    private Long idLugar;
+    private long idLugar;
     
     private String nomLugar;
     
@@ -70,7 +70,7 @@ public class LugarDTO {
         return direccionLugar;
     }
 
-    public void setIdLugar(Long idLugar) {
+    public void setIdLugar(long idLugar) {
         this.idLugar = idLugar;
     }
 

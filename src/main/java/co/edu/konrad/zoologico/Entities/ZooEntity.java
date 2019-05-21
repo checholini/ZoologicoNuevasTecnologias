@@ -25,7 +25,7 @@ public class ZooEntity implements Serializable {
    @Id
     @Column(name = "id_zoo")
    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long idZoo;
+    private long idZoo;
    /**
     * Attr: Nombre del zoologico
     */
@@ -35,7 +35,7 @@ public class ZooEntity implements Serializable {
     public ZooEntity() {
     }
 
-    public Long getIdZoo() {
+    public long getIdZoo() {
         return idZoo;
     }
 
@@ -43,7 +43,7 @@ public class ZooEntity implements Serializable {
         return nomZoo;
     }
 
-    public void setIdZoo(Long idZoo) {
+    public void setIdZoo(long idZoo) {
         this.idZoo = idZoo;
     }
 

@@ -49,7 +49,7 @@ public class LugarPersistence {
      * @param id
      * @return 
      */
-    public LugarEntity find(int id){
+    public LugarEntity find(long id){
         return em.find(LugarEntity.class, id);
     }
     
@@ -57,7 +57,7 @@ public class LugarPersistence {
     * Metodo para borrar un lugar segun id
     * @param id
     */
-    public void delete(int id){
+    public void delete(long id){
         LugarEntity entity = em.find(LugarEntity.class,id);
         em.remove(entity);
     }

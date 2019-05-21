@@ -44,7 +44,7 @@ public class LugarResource {
      */
     @Path("{id: \\d+}")
     @GET
-    public LugarDTO obtenerLugar(@PathParam("id") int Id){
+    public LugarDTO obtenerLugar(@PathParam("id") long Id){
         LugarEntity entity= logic.obtenerLugarPorId(Id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");
@@ -68,7 +68,7 @@ public class LugarResource {
      */
     @PUT
     @Path("{id2: \\d+}")
-    public LugarDTO actualizarLugar(LugarDTO lugar,@PathParam("id2") int id){
+    public LugarDTO actualizarLugar(LugarDTO lugar,@PathParam("id2") long id){
         LugarEntity entity = logic.obtenerLugarPorId(id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");
@@ -81,7 +81,7 @@ public class LugarResource {
      */
     @Path("{id3: \\d+}")
     @DELETE
-    public void eliminarLugar(@PathParam("id3") int id){
+    public void eliminarLugar(@PathParam("id3") long id){
         LugarEntity entity = logic.obtenerLugarPorId(id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");

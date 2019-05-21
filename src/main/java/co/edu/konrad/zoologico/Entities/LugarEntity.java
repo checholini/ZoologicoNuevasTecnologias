@@ -25,7 +25,7 @@ public class LugarEntity implements Serializable{
    @Id
     @Column(name = "id_lugar")
    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long idLugar;
+    private long idLugar;
    /**
     * Attr: Nombre del lugar
     */
@@ -41,7 +41,7 @@ public class LugarEntity implements Serializable{
     public LugarEntity() {
     }
 
-    public Long getIdLugar() {
+    public long getIdLugar() {
         return idLugar;
     }
 
@@ -53,7 +53,7 @@ public class LugarEntity implements Serializable{
         return direccionLugar;
     }
 
-    public void setIdLugar(Long idLugar) {
+    public void setIdLugar(long idLugar) {
         this.idLugar = idLugar;
     }
 

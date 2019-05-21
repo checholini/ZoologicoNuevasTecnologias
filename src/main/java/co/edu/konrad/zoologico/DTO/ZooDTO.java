@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class ZooDTO {
     
-     private Long idZoo;
+     private long idZoo;
      
      private String nomZoo;
 
@@ -52,7 +52,7 @@ public class ZooDTO {
         return zooEntity;
     }
 
-    public Long getIdZoo() {
+    public long getIdZoo() {
         return idZoo;
     }
 
@@ -60,7 +60,7 @@ public class ZooDTO {
         return nomZoo;
     }
 
-    public void setIdZoo(Long idZoo) {
+    public void setIdZoo(long idZoo) {
         this.idZoo = idZoo;
     }
 

@@ -34,7 +34,7 @@ public class ZooLogic {
      * @param id
      * @return 
      */
-    public ZooEntity obtenerZooPorId(int id){
+    public ZooEntity obtenerZooPorId(long id){
         ZooEntity zoo=persistence.find(id);
         if(zoo == null){
             throw new IllegalArgumentException("Producto Solicitado no existe");
@@ -56,7 +56,7 @@ public class ZooLogic {
      * @param id
      * @return 
      */
-    public ZooEntity actualizarZoo(ZooEntity entity, int id){
+    public ZooEntity actualizarZoo(ZooEntity entity, long id){
       ZooEntity zoo = persistence.update(entity);
         return zoo;
     }
@@ -64,7 +64,7 @@ public class ZooLogic {
      * eliminar un zoo
      * @param id 
      */
-    public void eliminarZoo (int id){
+    public void eliminarZoo (long id){
         persistence.delete(id);
     }
 }

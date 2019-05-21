@@ -49,7 +49,7 @@ public class ZooPersistence {
      * @param id
      * @return 
      */
-    public ZooEntity find(int id){
+    public ZooEntity find(long id){
         return em.find(ZooEntity.class, id);
     }
     
@@ -57,7 +57,7 @@ public class ZooPersistence {
     * Metodo para borrar un zoologico segun id
     * @param id
     */
-    public void delete(int id){
+    public void delete(long id){
         ZooEntity entity = em.find(ZooEntity.class,id);
         em.remove(entity);
     }
