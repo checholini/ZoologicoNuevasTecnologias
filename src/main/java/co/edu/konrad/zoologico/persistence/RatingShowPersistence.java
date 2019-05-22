@@ -48,7 +48,7 @@ public class RatingShowPersistence {
      * @param id
      * @return 
      */
-    public RatingShowEntity find(int id){
+    public RatingShowEntity find(long id){
         return em.find(RatingShowEntity.class, id);
     }
     
@@ -56,7 +56,7 @@ public class RatingShowPersistence {
     * Metodo para borrar un rating de show segun id
     * @param id
     */
-    public void delete(int id){
+    public void delete(long id){
         RatingShowEntity entity = em.find(RatingShowEntity.class,id);
         em.remove(entity);
     }

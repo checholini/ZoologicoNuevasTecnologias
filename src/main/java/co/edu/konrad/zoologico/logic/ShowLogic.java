@@ -33,7 +33,7 @@ public class ShowLogic {
      * @param id
      * @return 
      */
-    public ShowEntity obtenerShowPorId(int id){
+    public ShowEntity obtenerShowPorId(long id){
         ShowEntity show =persistence.find(id);
         if(show  == null){
             throw new IllegalArgumentException("Producto Solicitado no existe");
@@ -55,7 +55,7 @@ public class ShowLogic {
      * @param id
      * @return 
      */
-    public ShowEntity actualizarShow(ShowEntity entity, int id){
+    public ShowEntity actualizarShow(ShowEntity entity, long id){
       ShowEntity show = persistence.update(entity);
         return show ;
     }
@@ -63,7 +63,7 @@ public class ShowLogic {
      * eliminar un show
      * @param id 
      */
-    public void eliminarShow (int id){
+    public void eliminarShow (long id){
         persistence.delete(id);
     }
 }

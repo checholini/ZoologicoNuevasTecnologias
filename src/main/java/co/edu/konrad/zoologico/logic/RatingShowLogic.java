@@ -35,7 +35,7 @@ public class RatingShowLogic {
      * @param id
      * @return 
      */
-    public RatingShowEntity obtenerRatingShowPorId(int id){
+    public RatingShowEntity obtenerRatingShowPorId(long id){
         RatingShowEntity Rshow =persistence.find(id);
         if(Rshow  == null){
             throw new IllegalArgumentException("Producto Solicitado no existe");
@@ -57,7 +57,7 @@ public class RatingShowLogic {
      * @param id
      * @return 
      */
-    public RatingShowEntity actualizarRatingShow(RatingShowEntity entity, int id){
+    public RatingShowEntity actualizarRatingShow(RatingShowEntity entity, long id){
       RatingShowEntity Rshow = persistence.update(entity);
         return Rshow ;
     }
@@ -65,7 +65,7 @@ public class RatingShowLogic {
      * eliminar un Rating show
      * @param id 
      */
-    public void eliminarRatingShow (int id){
+    public void eliminarRatingShow (long id){
         persistence.delete(id);
     }
 }

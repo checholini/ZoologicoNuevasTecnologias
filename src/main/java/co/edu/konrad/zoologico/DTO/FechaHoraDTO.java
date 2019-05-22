@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class FechaHoraDTO {
     
-    private Long idFecHo;
+    private long idFecHo;
     
      private LugarEntity idLugar;
      
@@ -61,7 +61,7 @@ public class FechaHoraDTO {
         return Entity;
     }
 
-    public Long getIdFecHo() {
+    public long getIdFecHo() {
         return idFecHo;
     }
 
@@ -77,7 +77,7 @@ public class FechaHoraDTO {
         return hora;
     }
 
-    public void setIdFecHo(Long idFecHo) {
+    public void setIdFecHo(long idFecHo) {
         this.idFecHo = idFecHo;
     }
 

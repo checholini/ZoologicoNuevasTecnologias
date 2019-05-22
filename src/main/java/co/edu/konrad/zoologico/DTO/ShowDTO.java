@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class ShowDTO {
     
-    private Long idShow;
+    private long idShow;
     
     private EncargadoEntity idEncargado;
     
@@ -78,7 +78,7 @@ public class ShowDTO {
         return entity;
     }
 
-    public Long getIdShow() {
+    public long getIdShow() {
         return idShow;
     }
 
@@ -106,7 +106,7 @@ public class ShowDTO {
         return idFecHo;
     }
 
-    public void setIdShow(Long idShow) {
+    public void setIdShow(long idShow) {
         this.idShow = idShow;
     }
 

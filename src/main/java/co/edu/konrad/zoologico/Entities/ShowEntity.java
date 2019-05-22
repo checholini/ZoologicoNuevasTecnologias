@@ -27,7 +27,7 @@ public class ShowEntity implements Serializable {
     @Id
     @Column(name = "id_show")
    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long idShow;
+    private long idShow;
     /**
      * Attr: Id de encargado
      */
@@ -67,7 +67,7 @@ public class ShowEntity implements Serializable {
     public ShowEntity() {
     }
 
-    public Long getIdShow() {
+    public long getIdShow() {
         return idShow;
     }
 
@@ -91,7 +91,7 @@ public class ShowEntity implements Serializable {
         return idFecHo;
     }
 
-    public void setIdShow(Long idShow) {
+    public void setIdShow(long idShow) {
         this.idShow = idShow;
     }
 

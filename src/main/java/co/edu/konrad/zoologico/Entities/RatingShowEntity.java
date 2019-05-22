@@ -27,7 +27,7 @@ public class RatingShowEntity implements Serializable {
     @Id
     @Column(name = "id_rating_show")
    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long idRatingShow;
+    private long idRatingShow;
     /**
      * attr: Id del show
      */
@@ -54,7 +54,7 @@ public class RatingShowEntity implements Serializable {
     public RatingShowEntity() {
     }
 
-    public Long getIdRatingShow() {
+    public long getIdRatingShow() {
         return idRatingShow;
     }
 
@@ -74,7 +74,7 @@ public class RatingShowEntity implements Serializable {
         return idFecHo;
     }
 
-    public void setIdRatingShow(Long idRatingShow) {
+    public void setIdRatingShow(long idRatingShow) {
         this.idRatingShow = idRatingShow;
     }
 

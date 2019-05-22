@@ -48,7 +48,7 @@ public class FechaHoraPersistence {
      * @param id
      * @return 
      */
-    public FechaHoraEntity find(int id){
+    public FechaHoraEntity find(long id){
         return em.find(FechaHoraEntity.class, id);
     }
     
@@ -56,7 +56,7 @@ public class FechaHoraPersistence {
     * Metodo para borrar una fecha y hora segun id
     * @param id
     */
-    public void delete(int id){
+    public void delete(long id){
         FechaHoraEntity entity = em.find(FechaHoraEntity.class,id);
         em.remove(entity);
     }

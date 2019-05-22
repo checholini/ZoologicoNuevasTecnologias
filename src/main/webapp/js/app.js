@@ -3,5 +3,6 @@ var app = angular.module("Zoologico", [
    'ngRoute',
    'ui.router',
    'animalModule',
-   'bodyModule'
+   'bodyModule',
+   'lugarModule'
 ]);

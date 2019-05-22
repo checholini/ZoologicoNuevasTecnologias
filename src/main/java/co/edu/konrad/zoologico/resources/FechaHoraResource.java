@@ -44,7 +44,7 @@ public class FechaHoraResource {
      */
     @Path("{id: \\d+}")
     @GET
-    public FechaHoraDTO obtenerFechaHora(@PathParam("id") int Id){
+    public FechaHoraDTO obtenerFechaHora(@PathParam("id") long Id){
         FechaHoraEntity entity= logic.obtenerFechasHorasPorId(Id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");
@@ -68,7 +68,7 @@ public class FechaHoraResource {
      */
     @PUT
     @Path("{id2: \\d+}")
-    public FechaHoraDTO actualizarFechaHora(FechaHoraDTO FH,@PathParam("id2") int id){
+    public FechaHoraDTO actualizarFechaHora(FechaHoraDTO FH,@PathParam("id2") long id){
         FechaHoraEntity entity = logic.obtenerFechasHorasPorId(id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");
@@ -81,7 +81,7 @@ public class FechaHoraResource {
      */
     @Path("{id3: \\d+}")
     @DELETE
-    public void eliminarFechaHora(@PathParam("id3") int id){
+    public void eliminarFechaHora(@PathParam("id3") long id){
         FechaHoraEntity entity = logic.obtenerFechasHorasPorId(id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");

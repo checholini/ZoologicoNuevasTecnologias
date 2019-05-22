@@ -44,7 +44,7 @@ public class RatingShowResource {
      */
     @Path("{id: \\d+}")
     @GET
-    public RatingShowDTO obtenerRatingShow(@PathParam("id") int Id){
+    public RatingShowDTO obtenerRatingShow(@PathParam("id") long Id){
         RatingShowEntity entity= logic.obtenerRatingShowPorId(Id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");
@@ -68,7 +68,7 @@ public class RatingShowResource {
      */
     @PUT
     @Path("{id2: \\d+}")
-    public RatingShowDTO actualizarRatingShow(RatingShowDTO show,@PathParam("id2") int id){
+    public RatingShowDTO actualizarRatingShow(RatingShowDTO show,@PathParam("id2") long id){
         RatingShowEntity entity = logic.obtenerRatingShowPorId(id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");
@@ -81,7 +81,7 @@ public class RatingShowResource {
      */
     @Path("{id3: \\d+}")
     @DELETE
-    public void eliminarRatingShow(@PathParam("id3") int id){
+    public void eliminarRatingShow(@PathParam("id3") long id){
         RatingShowEntity entity = logic.obtenerRatingShowPorId(id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");

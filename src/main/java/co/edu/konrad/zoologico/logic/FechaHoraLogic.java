@@ -33,7 +33,7 @@ public class FechaHoraLogic {
      * @param id
      * @return 
      */
-    public FechaHoraEntity obtenerFechasHorasPorId(int id){
+    public FechaHoraEntity obtenerFechasHorasPorId(long id){
         FechaHoraEntity FH =persistence.find(id);
         if(FH  == null){
             throw new IllegalArgumentException("Producto Solicitado no existe");
@@ -55,7 +55,7 @@ public class FechaHoraLogic {
      * @param id
      * @return 
      */
-    public FechaHoraEntity actualizarFechasHoras(FechaHoraEntity entity, int id){
+    public FechaHoraEntity actualizarFechasHoras(FechaHoraEntity entity, long id){
       FechaHoraEntity FH = persistence.update(entity);
         return FH ;
     }
@@ -63,7 +63,7 @@ public class FechaHoraLogic {
      * eliminar una Fechas y Horas
      * @param id 
      */
-    public void eliminarFechasHoras (int id){
+    public void eliminarFechasHoras (long id){
         persistence.delete(id);
     }
 }

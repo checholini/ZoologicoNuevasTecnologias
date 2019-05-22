@@ -48,7 +48,7 @@ public class ShowPersistence {
      * @param id
      * @return 
      */
-    public ShowEntity find(int id){
+    public ShowEntity find(long id){
         return em.find(ShowEntity.class, id);
     }
     
@@ -56,7 +56,7 @@ public class ShowPersistence {
     * Metodo para borrar un show segun id
     * @param id
     */
-    public void delete(int id){
+    public void delete(long id){
         ShowEntity entity = em.find(ShowEntity.class,id);
         em.remove(entity);
     }

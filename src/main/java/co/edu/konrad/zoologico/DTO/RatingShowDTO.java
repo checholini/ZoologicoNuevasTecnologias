@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class RatingShowDTO {
     
-    private Long idRatingShow;
+    private long idRatingShow;
     
     private ShowEntity idShow;
     
@@ -69,7 +69,7 @@ public class RatingShowDTO {
         return entity;
     }
 
-    public Long getIdRatingShow() {
+    public long getIdRatingShow() {
         return idRatingShow;
     }
 
@@ -89,7 +89,7 @@ public class RatingShowDTO {
         return idFecHo;
     }
 
-    public void setIdRatingShow(Long idRatingShow) {
+    public void setIdRatingShow(long idRatingShow) {
         this.idRatingShow = idRatingShow;
     }
 

@@ -29,7 +29,7 @@ public class FechaHoraEntity implements Serializable {
      @Id
     @Column(name = "id_Fecha_Hora")
    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long idFecHo;
+    private long idFecHo;
      /**
       * Attr: Id del lugar
       */
@@ -50,7 +50,7 @@ public class FechaHoraEntity implements Serializable {
     public FechaHoraEntity() {
     }
 
-    public Long getIdFecHo() {
+    public long getIdFecHo() {
         return idFecHo;
     }
 
@@ -66,7 +66,7 @@ public class FechaHoraEntity implements Serializable {
         return hora;
     }
 
-    public void setIdFecHo(Long idFecHo) {
+    public void setIdFecHo(long idFecHo) {
         this.idFecHo = idFecHo;
     }
 
