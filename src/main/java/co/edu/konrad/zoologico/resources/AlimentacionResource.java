@@ -54,7 +54,7 @@ public class AlimentacionResource {
         if(alimentacionE == null){
             throw new RuntimeException("La alimentacion con id "+id+" no existe");
         }
-        return new AlimentacionDTO(alimentacion.createAlimento(alimentacionE));
+        return new AlimentacionDTO(alimentacionE);
     }
     
     /**
@@ -74,12 +74,12 @@ public class AlimentacionResource {
      */
     @PUT
     @Path("{id: \\d+}")
-    public AlimentacionDTO updateAlimentacion(@PathParam("id") int id){
+    public AlimentacionDTO updateAlimentacion(@PathParam("id") int id, AlimentacionDTO alimentacionDTO){
         AlimentacionEntity alimentacionE = alimentacion.getalimentacionById(id);
         if(alimentacionE == null){
             throw new RuntimeException("La alimentacion con id "+id+" no existe");
         }
-        return new AlimentacionDTO(alimentacion.updateAlimento(alimentacionE,id));
+        return new AlimentacionDTO(alimentacion.updateAlimento(alimentacionDTO.toEntity(),id));
     }
     
     /**

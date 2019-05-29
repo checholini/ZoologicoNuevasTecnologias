@@ -28,7 +28,7 @@ public class DocumentoEntity implements Serializable {
      */
     @Id
     @Column(name = "id_documento")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //  @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idDocumento;
     /**
      * Attr: Nombre id tipo de documento

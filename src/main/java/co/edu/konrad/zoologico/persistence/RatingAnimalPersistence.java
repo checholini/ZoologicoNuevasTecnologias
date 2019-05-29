@@ -7,6 +7,7 @@ package co.edu.konrad.zoologico.persistence;
 
 import co.edu.konrad.zoologico.Entities.RatingAnimalEntity;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -15,7 +16,8 @@ import javax.persistence.Query;
  * Declaracion de entity manager para la tabla rating_animal
  * @author SergioRodriguez
  */
-public class RatingAnimalPeristence {
+@Stateless
+public class RatingAnimalPersistence {
     /*
     * Declaracion manejador
     */
@@ -48,7 +50,7 @@ public class RatingAnimalPeristence {
      * @param id Indice para buscar
      * @return Retorna un objeto de tipo AnimalEntity
      */
-    public RatingAnimalEntity find(int id){
+    public RatingAnimalEntity find(long id){
         return em.find(RatingAnimalEntity.class, id);
     }
     
@@ -56,7 +58,7 @@ public class RatingAnimalPeristence {
     * Metodo para borrar un rating del animal segun id
     * @param id Indice para buscar
     */
-    public void delete(int id){
+    public void delete(long id){
         RatingAnimalEntity entity = em.find(RatingAnimalEntity.class,id);
         em.remove(entity);
     }

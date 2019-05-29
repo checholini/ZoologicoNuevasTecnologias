@@ -37,7 +37,7 @@ public class CuidadorLogic {
      * @param id
      * @return
      */
-    public CuidadorEntity obtenerCuidadorPorId(int id) {
+    public CuidadorEntity obtenerCuidadorPorId(Long id) {
         CuidadorEntity cuidador = persistence.find(id);
         if (cuidador == null) {
             throw new IllegalArgumentException("Cuidador Solicitado no existe");
@@ -63,7 +63,7 @@ public class CuidadorLogic {
      * @param id
      * @return
      */
-    public CuidadorEntity actualizarCuidador(CuidadorEntity entity, int id) {
+    public CuidadorEntity actualizarCuidador(CuidadorEntity entity, Long id) {
         CuidadorEntity cuidador = persistence.update(entity);
         return cuidador;
     }
@@ -73,7 +73,7 @@ public class CuidadorLogic {
      *
      * @param id
      */
-    public void eliminarCuidador(int id) {
+    public void eliminarCuidador(Long id) {
         persistence.delete(id);
     }
 }

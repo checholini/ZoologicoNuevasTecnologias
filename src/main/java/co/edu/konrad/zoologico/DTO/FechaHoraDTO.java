@@ -22,9 +22,9 @@ public class FechaHoraDTO {
     
      private LugarEntity idLugar;
      
-      private Date fecha;
+      private String fecha;
       
-      private Time hora;
+      private String hora;
       
     public FechaHoraDTO() {
     }
@@ -69,11 +69,11 @@ public class FechaHoraDTO {
         return idLugar;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public Time getHora() {
+    public String getHora() {
         return hora;
     }
 
@@ -85,11 +85,11 @@ public class FechaHoraDTO {
         this.idLugar = idLugar;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
-    public void setHora(Time hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
     

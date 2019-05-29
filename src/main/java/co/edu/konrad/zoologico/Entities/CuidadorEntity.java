@@ -37,7 +37,7 @@ public class CuidadorEntity implements Serializable{
     /**
      * Attr: id tipo de documento
      */
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "id_documento")
     private DocumentoEntity idDocumento;
 

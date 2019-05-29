@@ -34,18 +34,18 @@ public class FechaHoraEntity implements Serializable {
       * Attr: Id del lugar
       */
      @ManyToOne
-     @JoinColumn(name = "id_lugar")
+     @JoinColumn(name = "idLugar")
      private LugarEntity idLugar;
      /**
       * Attr: fecha
       */
      @Column
-     private Date fecha;
+     private String fecha;
      /**
       * Attr: hora
       */
      @Column
-     private Time hora;
+     private String hora;
 
     public FechaHoraEntity() {
     }
@@ -58,11 +58,11 @@ public class FechaHoraEntity implements Serializable {
         return idLugar;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public Time getHora() {
+    public String getHora() {
         return hora;
     }
 
@@ -74,11 +74,11 @@ public class FechaHoraEntity implements Serializable {
         this.idLugar = idLugar;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
-    public void setHora(Time hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
      

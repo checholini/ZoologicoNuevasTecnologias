@@ -37,7 +37,7 @@ public class DocumentoLogic {
      * @param id
      * @return
      */
-    public DocumentoEntity obtenerDocumentoPorId(int id) {
+    public DocumentoEntity obtenerDocumentoPorId(Long id) {
         DocumentoEntity documento = persistence.find(id);
         if (documento == null) {
             throw new IllegalArgumentException("Documento Solicitado no existe");
@@ -63,7 +63,7 @@ public class DocumentoLogic {
      * @param id
      * @return
      */
-    public DocumentoEntity actualizarDocumento(DocumentoEntity entity, int id) {
+    public DocumentoEntity actualizarDocumento(DocumentoEntity entity, Long id) {
         DocumentoEntity documento = persistence.update(entity);
         return documento;
     }
@@ -73,7 +73,7 @@ public class DocumentoLogic {
      *
      * @param id
      */
-    public void eliminarDocumento(int id) {
+    public void eliminarDocumento(Long id) {
         persistence.delete(id);
     }
 }

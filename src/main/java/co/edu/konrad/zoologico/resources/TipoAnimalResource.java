@@ -54,7 +54,7 @@ public class TipoAnimalResource {
         if(animalE == null){
             throw new RuntimeException("El animal con id "+id+" no existe");
         }
-        return new TipoAnimalDTO(tipoAnimal.createTipoAnimal(animalE));
+        return new TipoAnimalDTO(animalE);
     }
     
     /**
@@ -74,12 +74,12 @@ public class TipoAnimalResource {
      */
     @PUT
     @Path("{id: \\d+}")
-    public TipoAnimalDTO updateanimal(@PathParam("id") int id){
+    public TipoAnimalDTO updateanimal(@PathParam("id") int id, TipoAnimalDTO animalDTO){
         TipoAnimalEntity animalE = tipoAnimal.getTipoAnimalById(id);
         if(animalE == null){
             throw new RuntimeException("El animal con id "+id+" no existe");
         }
-        return new TipoAnimalDTO(tipoAnimal.updateTipoAnimal(animalE,id));
+        return new TipoAnimalDTO(tipoAnimal.updateTipoAnimal(animalDTO.toEntity(),id));
     }
     
     /**

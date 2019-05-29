@@ -48,7 +48,7 @@ public class CuidadorPersistence {
      * @param id
      * @return 
      */
-    public CuidadorEntity find(int id){
+    public CuidadorEntity find(Long id){
         return em.find(CuidadorEntity.class, id);
     }
     
@@ -56,7 +56,7 @@ public class CuidadorPersistence {
     * Metodo para borrar un ciudador segun id
     * @param id
     */
-    public void delete(int id){
+    public void delete(Long id){
         CuidadorEntity entity = em.find(CuidadorEntity.class,id);
         em.remove(entity);
     }
