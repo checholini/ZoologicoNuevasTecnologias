@@ -1,1 +1,0 @@
-var bodyModule = angular.module("bodyModule",[]);

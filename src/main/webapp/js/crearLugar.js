@@ -10,13 +10,13 @@
                 return sParameterName [1] === undefined ? true : sParameterName[1];
             }
         }
-    }; 
+    };
 
     if (getUrlParameter('id')) {
         $.ajax({
             method: 'GET',
             //Cambiar Ruta al servicio necesitado
-            url: '/ZoologicoNuevasTecnologias-develop/api/lugar/' + getUrlParameter('id'),
+            url: '/ZoologicoNuevasTecnologias/api/lugar/' + getUrlParameter('id'),
             contentType: 'application/json',
             dataType: 'json'
         }).done(function (data) {
@@ -25,20 +25,21 @@
             var direccionLugar = $('#direccionLugar').val(data.direccionLugar);
             var id = data.idLugar;
             $('#CrearBoton').text("Actualizar").click(function (event) {
+              console.log(id);
                 $.ajax({
                     method: 'PUT',
                     //Cambiar Ruta al servicio necesitado
-                    url: '/ZoologicoNuevasTecnologias-develop/api/lugar/' + id,
+                    url: '/ZoologicoNuevasTecnologias/api/lugar/' + id,
                     contentType: 'application/json',
                     dataType: 'json',
-                    //Mapear datos si hay un json dentro de otro, añadir "id": {"id" : valorId} 
+                    //Mapear datos si hay un json dentro de otro, añadir "id": {"id" : valorId}
                     data: JSON.stringify({
                         idLugar:id,
                         nomLugar: direccionLugar.val(),
                         direccionLugar: nomLugar.val()
                     })
                 }).done(function (data) {
-                    window.location.href = '/ZoologicoNuevasTecnologias-develop';
+                    window.location.href = '/ZoologicoNuevasTecnologias/shows.html';
                 }).fail(function (xhr, status, error) {
                     console.log.error;
                 });
@@ -56,15 +57,15 @@
             $.ajax({
                 method: 'POST',
                  //Cambiar Ruta al servicio necesitado
-                url: '/ZoologicoNuevasTecnologias-develop/api/lugar/',
+                url: '/ZoologicoNuevasTecnologias/api/lugar/',
                 contentType: 'application/json',
                 dataType: 'json',
                 data: JSON.stringify({
                         nomLugar: direccionLugar,
-                        direccionLugar: nomLugar 
+                        direccionLugar: nomLugar
                 })
             }).done(function (data) {
-                window.location.href = '/ZoologicoNuevasTecnologias-develop';
+                window.location.href = '/ZoologicoNuevasTecnologias';
             }).fail(function (xhr, status, error) {
                 console.log(error);
             });

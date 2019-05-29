@@ -2,7 +2,7 @@
     $(document).ready(function (event) {
         $.ajax({
             method: 'GET',
-            url: '/ZoologicoNuevasTecnologias-develop/api/lugar',
+            url: '/ZoologicoNuevasTecnologias/api/lugar',
             dataType: 'json',
             contentType: 'application/json'
         }).done(function (data) {
@@ -19,7 +19,7 @@
                 var botonEliminar = $('<button>').addClass('btn btn-danger');
                 botonEliminar.text('Eliminar').attr('data-id',data[i].idLugar);//poner la id de la tabla o entidad
                 botonEliminar.click(eliminar);
-                var botonActualizar = $('<a href="/ZoologicoNuevasTecnologias-develop/pages/crearLugar.html?id='+ data[i].idLugar+'">').addClass('btn btn-primary');//poner la id de la tabla o entidad
+                var botonActualizar = $('<a href="/ZoologicoNuevasTecnologias/pages/crearLugar.html?id='+ data[i].idLugar+'">').addClass('btn btn-primary');//poner la id de la tabla o entidad
                 //enrutar a la pagina de crear de cada servicio
                 botonActualizar.text('Actualizar');
 
@@ -37,11 +37,11 @@
             console.log(error);
         });
     });
-    
+
     function eliminar(event){
         $.ajax({
             method: 'DELETE',
-            url:'/ZoologicoNuevasTecnologias-develop/api/lugar/'+$(this).attr('data-id'),//enrutar con el servicio requerido
+            url:'/ZoologicoNuevasTecnologias/api/lugar/'+$(this).attr('data-id'),//enrutar con el servicio requerido
             contentType: 'application/json',
             dataType: 'json'
         }).done(function(data){
