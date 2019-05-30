@@ -16,7 +16,7 @@
         $.ajax({
             method: 'GET',
             //Cambiar Ruta al servicio necesitado
-            url: '/ZoologicoNuevasTecnologias-develop/api/tipodedocumento/' + getUrlParameter('id'),
+            url: '/ZoologicoNuevasTecnologias/api/tipodedocumento/' + getUrlParameter('id'),
             contentType: 'application/json',
             dataType: 'json'
         }).done(function (data) {
@@ -28,7 +28,7 @@
                 $.ajax({
                     method: 'PUT',
                     //Cambiar Ruta al servicio necesitado
-                    url: '/ZoologicoNuevasTecnologias-develop/api/tipodedocumento/' + id,
+                    url: '/ZoologicoNuevasTecnologias/api/tipodedocumento/' + id,
                     contentType: 'application/json',
                     dataType: 'json',
                     //Mapear datos si hay un json dentro de otro, añadir "id": {"id" : valorId}
@@ -37,7 +37,7 @@
                         nom_tipo_documento: nom_tipo_documento.val(),
                     })
                 }).done(function (data) {
-                    window.location.href = '/ZoologicoNuevasTecnologias-develop/shows.html';
+                    window.location.href = '/ZoologicoNuevasTecnologias/shows.html';
                 }).fail(function (xhr, status, error) {
                     console.log.error;
                 });
@@ -54,14 +54,14 @@
             $.ajax({
                 method: 'POST',
                  //Cambiar Ruta al servicio necesitado
-                url: '/ZoologicoNuevasTecnologias-develop/api/tipodedocumento/',
+                url: '/ZoologicoNuevasTecnologias/api/tipodedocumento/',
                 contentType: 'application/json',
                 dataType: 'json',
                 data: JSON.stringify({
                         nom_tipo_documento: nom_tipo_documento,
                 })
             }).done(function (data) {
-                window.location.href = '/ZoologicoNuevasTecnologias-develop';
+                window.location.href = '/ZoologicoNuevasTecnologias';
             }).fail(function (xhr, status, error) {
                 console.log(error);
             });

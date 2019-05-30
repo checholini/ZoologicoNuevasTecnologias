@@ -2,7 +2,7 @@
     $(document).ready(function (event) {
         $.ajax({
             method: 'GET',
-            url: '/ZoologicoNuevasTecnologias-develop/api/documento',
+            url: '/ZoologicoNuevasTecnologias/api/documento',
             dataType: 'json',
             contentType: 'application/json'
         }).done(function (data) {
@@ -17,7 +17,7 @@
                 var botonEliminar = $('<button>').addClass('btn btn-danger');
                 botonEliminar.text('Eliminar').attr('data-id',data[i].idDocumento);//poner la id de la tabla o entidad
                 botonEliminar.click(eliminar);
-                var botonActualizar = $('<a href="/ZoologicoNuevasTecnologias-develop/forms/crearDocumento.html?id='+ data[i].idDocumento+'">').addClass('btn btn-primary');//poner la id de la tabla o entidad
+                var botonActualizar = $('<a href="/ZoologicoNuevasTecnologias/forms/crearDocumento.html?id='+ data[i].idDocumento+'">').addClass('btn btn-primary');//poner la id de la tabla o entidad
                 //enrutar a la pagina de crear de cada servicio
                 botonActualizar.text('Actualizar');
 
@@ -38,7 +38,7 @@
     function eliminar(event){
         $.ajax({
             method: 'DELETE',
-            url:'/ZoologicoNuevasTecnologias-develop/api/documento/'+$(this).attr('data-id'),//enrutar con el servicio requerido
+            url:'/ZoologicoNuevasTecnologias/api/documento/'+$(this).attr('data-id'),//enrutar con el servicio requerido
             contentType: 'application/json',
             dataType: 'json'
         }).done(function(data){
