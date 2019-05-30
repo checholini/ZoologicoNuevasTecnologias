@@ -16,25 +16,25 @@
         $.ajax({
             method: 'GET',
             //Cambiar Ruta al servicio necesitado
-            url: '/ZoologicoNuevasTecnologias/api/cuidador/' + getUrlParameter('id'),
+            url: '/ZoologicoNuevasTecnologias/api/encargado/' + getUrlParameter('id'),
             contentType: 'application/json',
             dataType: 'json'
         }).done(function (data) {
             //Crear variables con los camnpos de la entidad y referenciar los campos en el formulario
-            var fechaNacimientoCuidador = $('#fechaNacimientoCuidador').val(data.fechaNacimientoCuidador);
-            var id = data.idCuidador;
+            var telefonoEncargado = $('#telefonoEncargado').val(data.telefonoEncargado);
+            var id = data.idEncargado;
             $('#CrearBoton').text("Actualizar").click(function (event) {
               console.log(id);
                 $.ajax({
                     method: 'PUT',
                     //Cambiar Ruta al servicio necesitado
-                    url: '/ZoologicoNuevasTecnologias/api/cuidador/' + id,
+                    url: '/ZoologicoNuevasTecnologias/api/encargado/' + id,
                     contentType: 'application/json',
                     dataType: 'json',
                     //Mapear datos si hay un json dentro de otro, añadir "id": {"id" : valorId}
                     data: JSON.stringify({
-                        idCuidador:id,
-                        fechaNacimientoCuidador: fechaNacimientoCuidador.val(),
+                        idEncargado:id,
+                        telefonoEncargado: telefonoEncargado.val(),
                     })
                 }).done(function (data) {
                     window.location.href = '/ZoologicoNuevasTecnologias/conocenos.html';
@@ -49,16 +49,16 @@
     } else {
         $('#CrearBoton').click(function (event) {
             //Crear variables con los camnpos de la entidad y referenciar los campos en el formulario
-            var fechaNacimientoCuidador = $('#fechaNacimientoCuidador').val();
+            var telefonoEncargado = $('#telefonoEncargado').val();
             //Mapear datos si hay un json dentro de otro, añadir "id": {"id" : valorId}
             $.ajax({
                 method: 'POST',
                  //Cambiar Ruta al servicio necesitado
-                url: '/ZoologicoNuevasTecnologias/api/cuidador/',
+                url: '/ZoologicoNuevasTecnologias/api/encargado/',
                 contentType: 'application/json',
                 dataType: 'json',
                 data: JSON.stringify({
-                        fechaNacimientoCuidador: fechaNacimientoCuidador,
+                        telefonoEncargado: telefonoEncargado,
                 })
             }).done(function (data) {
                 window.location.href = '/ZoologicoNuevasTecnologias/conocenos.html';

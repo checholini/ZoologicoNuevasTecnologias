@@ -37,7 +37,7 @@
                         nomDocumento: nomDocumento.val(),
                     })
                 }).done(function (data) {
-                    window.location.href = '/ZoologicoNuevasTecnologias/documento.html';
+                    window.location.href = '/ZoologicoNuevasTecnologias/conocenos.html';
                 }).fail(function (xhr, status, error) {
                     console.log.error;
                 });
@@ -61,7 +61,7 @@
                         nomDocumento: nomDocumento,
                 })
             }).done(function (data) {
-                window.location.href = '/ZoologicoNuevasTecnologias';
+                window.location.href = '/ZoologicoNuevasTecnologias/conocenos.html';
             }).fail(function (xhr, status, error) {
                 console.log(error);
             });
