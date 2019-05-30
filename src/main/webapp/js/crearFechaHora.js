@@ -16,12 +16,12 @@
         $.ajax({
             method: 'GET',
             //Cambiar Ruta al servicio necesitado
-            url: '/ZoologicoNuevasTecnologias-develop/api/fechayhora/' + getUrlParameter('id'),
+            url: '/ZoologicoNuevasTecnologias/api/fechayhora/' + getUrlParameter('id'),
             contentType: 'application/json',
             dataType: 'json'
         }).done(function (data) {
             //Crear variables con los campos de la entidad y referenciar los campos en el formulario
-            var idLugar = $('#idLugar').val(data.idLugar);
+            var idLugar = $('#idLugar').val(data.idLugar.idLugar);
             var fecha = $('#fecha').val(data.fecha);
             var hora = $('#hora').val(data.hora);
             var id = data.idFecHo;
@@ -30,7 +30,7 @@
                 $.ajax({
                     method: 'PUT',
                      //Cambiar Ruta al servicio necesitado
-                    url: '/ZoologicoNuevasTecnologias-develop/api/fechayhora/' + id,
+                    url: '/ZoologicoNuevasTecnologias/api/fechayhora/' + id,
                     contentType: 'application/json',
                     dataType: 'json',
                     data: JSON.stringify({
@@ -43,7 +43,7 @@
                         hora: hora.val()
                     })
                 }).done(function (data) {
-                    window.location.href = '/ZoologicoNuevasTecnologias-develop/shows.html';
+                    window.location.href = '/ZoologicoNuevasTecnologias/shows.html';
                 }).fail(function (xhr, status, error) {
                     console.log.error;
                 });
@@ -58,22 +58,23 @@
             var idLugar = $('#idLugar').val();
             var fecha = $('#fecha').val();
             var hora = $('#hora').val();
+            console.log(idLugar);
             //Mapear datos si hay un json dentro de otro, añadir "id": {"id" : valorId}
             $.ajax({
                 method: 'POST',
                  //Cambiar Ruta al servicio necesitado
-                url: '/ZoologicoNuevasTecnologias-develop/api/lugar',
+                url: '/ZoologicoNuevasTecnologias/api/fechayhora',
                 contentType: 'application/json',
                 dataType: 'json',
                 data: JSON.stringify({
                         idLugar:{
-                            idLugar : idLugar.val()
+                            idLugar : idLugar
                         },
-                        fecha: fecha.val(),
-                        hora: hora.val()
+                        fecha: fecha,
+                        hora: hora
                 })
             }).done(function (data) {
-                window.location.href = '/ZoologicoNuevasTecnologias-develop/shows.html';
+                window.location.href = '/ZoologicoNuevasTecnologias/shows.html';
             }).fail(function (xhr, status, error) {
                 console.log(error);
             });

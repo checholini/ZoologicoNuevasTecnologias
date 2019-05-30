@@ -69,6 +69,7 @@
             var descripcion = $('#descripcion').val();
             var cuidador = $('#cuidador').val();
             //Mapear datos si hay un json dentro de otro, añadir "id": {"id" : valorId}
+
             $.ajax({
                 method: 'POST',
                  //Cambiar Ruta al servicio necesitado
@@ -85,7 +86,8 @@
                   idCuidador:{idCuidador: cuidador}
                     })
             }).done(function (data) {
-                window.location.href = '/ZoologicoNuevasTecnologias/animales.html';
+              console.log(nombre);
+                //window.location.href = '/ZoologicoNuevasTecnologias/animales.html';
             }).fail(function (xhr, status, error) {
                 console.log(error);
             });

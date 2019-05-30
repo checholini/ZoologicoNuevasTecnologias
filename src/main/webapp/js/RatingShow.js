@@ -11,7 +11,7 @@
                 // División de la fila
                 //cada campo con su correspondiente valor
                 var idShow = $('<td>');
-                idShow.text(data[i].idShow.nomShow);
+                idShow.text(data[i].idShow.idShow);
                 var rating = $('<td>');
                 rating.text(data[i].rating);
                 var comentaria = $('<td>');

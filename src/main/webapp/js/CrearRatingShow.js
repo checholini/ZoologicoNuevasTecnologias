@@ -16,7 +16,7 @@
         $.ajax({
             method: 'GET',
             //Cambiar Ruta al servicio necesitado
-            url: '/ZoologicoNuevasTecnologias-develop/api/Rating_Show/' + getUrlParameter('id'),
+            url: '/ZoologicoNuevasTecnologias/api/ratingshow/' + getUrlParameter('id'),
             contentType: 'application/json',
             dataType: 'json'
         }).done(function (data) {
@@ -30,7 +30,7 @@
                 $.ajax({
                     method: 'PUT',
                      //Cambiar Ruta al servicio necesitado
-                    url: '/ZoologicoNuevasTecnologias-develop/api/Rating_Show/' + id,
+                    url: '/ZoologicoNuevasTecnologias/api/ratingshow/' + id,
                     contentType: 'application/json',
                     dataType: 'json',
                     data: JSON.stringify({
@@ -42,7 +42,7 @@
                         comentario : comentaria
                     })
                 }).done(function (data) {
-                    window.location.href = '/ZoologicoNuevasTecnologias-develop/shows.html';
+                    window.location.href = '/ZoologicoNuevasTecnologias/shows.html';
                 }).fail(function (xhr, status, error) {
                     console.log.error;
                 });
@@ -61,7 +61,7 @@
             $.ajax({
                 method: 'POST',
                  //Cambiar Ruta al servicio necesitado
-                url: '/ZoologicoNuevasTecnologias-develop/api/Rating_Show',
+                url: '/ZoologicoNuevasTecnologias/api/ratingshow',
                 contentType: 'application/json',
                 dataType: 'json',
                 data: JSON.stringify({
@@ -71,7 +71,7 @@
                         comentario : comentaria
                 })
             }).done(function (data) {
-                window.location.href = '/ZoologicoNuevasTecnologias-develop/shows.html';
+                window.location.href = '/ZoologicoNuevasTecnologias/shows.html';
             }).fail(function (xhr, status, error) {
                 console.log(error);
             });

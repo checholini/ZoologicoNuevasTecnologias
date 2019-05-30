@@ -100,6 +100,7 @@ public class AnimalDTO {
        animal.setIdTipoAnimal(this.idTipoAnimal);
        animal.setIdZoo(this.idZoo);
        animal.setNombreCientificoAnimal(nombreCientificoAnimal);
+       animal.setNombre(this.nombre);
        return animal;
    }
     
