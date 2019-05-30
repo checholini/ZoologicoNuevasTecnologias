@@ -86,16 +86,17 @@
             class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static" style="background: #FFFFFF ; height: 500px">
               <strong class="d-inline-block mb-2 text-primary">
-                <h1>LUGARES</h1>
+                <h1>Fecha y Hora</h1>
               </strong>
               <div class="container">
                 <div class="container" style="height: 30px"></div>
 
-                <div id="tableLugares" class="container">
+                <div id="tableFechaHora" class="container">
                   <table class="table table-striped">
                     <thead>
-                      <th scope="col">nombre</th>
-                      <th scope="col">direccion</th>
+                      <th scope="col">Lugar</th>
+                      <th scope="col">fecha</th>
+                      <th scope="col">hora</th>
                     </thead>
                     <tbody></tbody>
                   </table>
@@ -103,10 +104,95 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-sm-10"></div>
-                      <div class="col-sm"><a class="btn btn-info" href="./crearLugar.html">Crear Nuevo</a></div>
+                      <div class="col-sm"><a class="btn btn-info" href="./forms/crearFechaHora.html">Crear Nuevo</a></div>
                     </div>
                   </div>
                 </div>
+
+
+              </div>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="container" style="height: 30px"></div>
+        <div class="cards" style="height: 25%">
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <div style="width:100%; height:600px" data-natural-width="1240" data-natural-heigth="720" data-parallaxing
+    data-parallaxing-img="https://source.unsplash.com/1240x720/?dog" class="cards">
+    <div class="container" style="height: 30px"></div>
+    <div class="container">
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div
+            class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static" style="background: #FFFFFF; height: 500px">
+              <strong class="d-inline-block mb-2 text-primary">
+                <h1>Show</h1>
+              </strong>
+              <div class="container">
+                <div class="container" style="height: 30px"></div>
+
+                <div id="tableShow" class="container">
+                    <table class="table table-striped">
+                        <thead>
+                            <th scope="col">Encargado</th>
+                            <th scope="col">Nombre show</th>
+                            <th scope="col">Nombre zoo</th>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-10"></div>
+                            <div class="col-sm"><a class="btn btn-info" href="./forms/crearShow.html">Crear Nuevo</a></div>
+                        </div>
+            
+                    </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <div
+            class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static" style="background: #FFFFFF ; height: 500px">
+              <strong class="d-inline-block mb-2 text-primary">
+                <h1>Rating Show</h1>
+              </strong>
+              <div class="container">
+                <div class="container" style="height: 30px"></div>
+
+                <div id="tableRatingShow" class="container">
+                  <table class="table table-striped">
+                    <thead>
+                      <th scope="col">Show</th>
+                      <th scope="col">Rating</th>
+                      <th scope="col">Comentario</th>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                  <br>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-10"></div>
+                      <div class="col-sm"><a class="btn btn-info" href="./forms/crearRatingShow.html">Crear Nuevo</a></div>
+                    </div>
+                  </div>
+                </div>
+
 
               </div>
             </div>
@@ -149,31 +235,12 @@
     <h1></h1>
 </div>
 
-    </div>
-    <div></div>
-    <!--Div Animales-->
 
- </div>
-
-    <div id="tableLugares" class="container">
-        <table class="table table-striped">
-            <thead>
-                <th scope="col">nombre</th>
-                <th scope="col">direccion</th>
-            </thead>
-            <tbody></tbody>
-        </table>
-        <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-10"></div>
-                <div class="col-sm"><a class="btn btn-info" href="./forms/crearLugar.html">Crear Nuevo</a></div>
-            </div>
-
-        </div>
-    </div>
 
     <script src="./js/lugar.js"></script>
+    <script src="./js/show.js"></script>
+    <script src="./js/FechaHora.js"></script>
+    <script src="./js/RatingShow.js"></script>
     <script src="./js/parallaxing.min.js"></script>
   </body>
 </html>
