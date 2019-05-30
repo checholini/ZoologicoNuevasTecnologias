@@ -48,7 +48,7 @@ public class DocumentoPersistence {
      * @param id
      * @return 
      */
-    public DocumentoEntity find(Long id){
+    public DocumentoEntity find(long id){
         return em.find(DocumentoEntity.class, id);
     }
     
@@ -56,7 +56,7 @@ public class DocumentoPersistence {
     * Metodo para borrar un documento segun id
     * @param id
     */
-    public void delete(Long id){
+    public void delete(long id){
        DocumentoEntity entity = em.find(DocumentoEntity.class,id);
         em.remove(entity);
     }

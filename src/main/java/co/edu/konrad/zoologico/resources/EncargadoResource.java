@@ -44,7 +44,7 @@ public class EncargadoResource {
      */
     @Path("{id: \\d+}")
     @GET
-    public EncargadoDTO obtenerEncargado(@PathParam("id") int Id){
+    public EncargadoDTO obtenerEncargado(@PathParam("id") long Id){
         EncargadoEntity entity= logic.obtenerEncargadoPorId(Id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");
@@ -68,7 +68,7 @@ public class EncargadoResource {
      */
     @PUT
     @Path("{id2: \\d+}")
-    public EncargadoDTO actualizarEncargado(EncargadoDTO encargado,@PathParam("id2") int id){
+    public EncargadoDTO actualizarEncargado(EncargadoDTO encargado,@PathParam("id2") long id){
         EncargadoEntity entity = logic.obtenerEncargadoPorId(id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");
@@ -81,7 +81,7 @@ public class EncargadoResource {
      */
     @Path("{id3: \\d+}")
     @DELETE
-    public void eliminarEncargado(@PathParam("id3") int id){
+    public void eliminarEncargado(@PathParam("id3") long id){
         EncargadoEntity entity = logic.obtenerEncargadoPorId(id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");

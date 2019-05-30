@@ -48,7 +48,7 @@ public class EncargadoPersistence {
      * @param id
      * @return 
      */
-    public EncargadoEntity find(int id){
+    public EncargadoEntity find(long id){
         return em.find(EncargadoEntity.class, id);
     }
     
@@ -56,7 +56,7 @@ public class EncargadoPersistence {
     * Metodo para borrar un encargado segun id
     * @param id
     */
-    public void delete(int id){
+    public void delete(long id){
         EncargadoEntity entity = em.find(EncargadoEntity.class,id);
         em.remove(entity);
     }

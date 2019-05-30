@@ -27,7 +27,7 @@ public class CuidadorEntity implements Serializable{
     @Id
     @Column(name = "id_cuidador")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idCuidador;
+    private long idCuidador;
     /**
      * Attr: Dia de fecha de nacimiento del cuidador
      */
@@ -44,11 +44,11 @@ public class CuidadorEntity implements Serializable{
     public CuidadorEntity() {
     }
 
-    public Long getIdCuidador() {
+    public long getIdCuidador() {
         return idCuidador;
     }
 
-    public void setIdCuidador(Long idCuidador) {
+    public void setIdCuidador(long idCuidador) {
         this.idCuidador = idCuidador;
     }
 
@@ -67,6 +67,5 @@ public class CuidadorEntity implements Serializable{
     public void setIdDocumento(DocumentoEntity idDocumento) {
         this.idDocumento = idDocumento;
     }
-    
     
 }

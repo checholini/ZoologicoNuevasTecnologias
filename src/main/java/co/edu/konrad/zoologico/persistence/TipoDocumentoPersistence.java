@@ -48,7 +48,7 @@ public class TipoDocumentoPersistence {
      * @param id
      * @return 
      */
-    public TipoDocumentoEntity find(int id){
+    public TipoDocumentoEntity find(long id){
         return em.find(TipoDocumentoEntity.class, id);
     }
     
@@ -56,7 +56,7 @@ public class TipoDocumentoPersistence {
     * Metodo para borrar un tipo de documento segun id
     * @param id
     */
-    public void delete(int id){
+    public void delete(long id){
         TipoDocumentoEntity entity = em.find(TipoDocumentoEntity.class,id);
         em.remove(entity);
     }

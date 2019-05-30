@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class TipoDocumentoDTO {
     
-    private Long idTipoDocumento;
+    private long idTipoDocumento;
     
     private String nom_tipo_documento;
     
@@ -63,7 +63,7 @@ public class TipoDocumentoDTO {
         return idTipoDocumento;
     }
 
-    public void setIdTipoDocumento(Long idTipoDocumento) {
+    public void setIdTipoDocumento(long idTipoDocumento) {
         this.idTipoDocumento = idTipoDocumento;
     }
 

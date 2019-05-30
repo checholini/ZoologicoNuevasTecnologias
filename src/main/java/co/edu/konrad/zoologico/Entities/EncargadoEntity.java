@@ -30,7 +30,7 @@ public class EncargadoEntity implements Serializable {
     @Id
     @Column(name = "id_encargado")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idEncargado;
+    private long idEncargado;
     /**
      * Attr: telefono del encargado
      */
@@ -46,11 +46,11 @@ public class EncargadoEntity implements Serializable {
     public EncargadoEntity() {
     }
 
-    public Long getIdEncargado() {
+    public long getIdEncargado() {
         return idEncargado;
     }
 
-    public void setIdEncargado(Long idEncargado) {
+    public void setIdEncargado(long idEncargado) {
         this.idEncargado = idEncargado;
     }
 

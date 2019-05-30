@@ -17,10 +17,9 @@ import java.util.List;
  */
 public class CuidadorDTO {
     
-    private Long idCuidador;
+    private long idCuidador;
     
     private String fechaNacimientoCuidador;
-    
     private DocumentoEntity idDocumento;
     
 
@@ -61,11 +60,11 @@ public class CuidadorDTO {
         return cuidadorEntity;
     }
 
-    public Long getIdCuidador() {
+    public long getIdCuidador() {
         return idCuidador;
     }
 
-    public void setIdCuidador(Long idCuidador) {
+    public void setIdCuidador(long idCuidador) {
         this.idCuidador = idCuidador;
     }
 
@@ -85,7 +84,4 @@ public class CuidadorDTO {
         this.idDocumento = idDocumento;
     }
 
-    
-
-    
 }

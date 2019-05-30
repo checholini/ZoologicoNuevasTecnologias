@@ -44,7 +44,7 @@ public class TipoDeDocumentoResource {
      */
     @Path("{id: \\d+}")
     @GET
-    public TipoDocumentoDTO obtenerTipoDeDocumento(@PathParam("id") int Id){
+    public TipoDocumentoDTO obtenerTipoDeDocumento(@PathParam("id") long Id){
         TipoDocumentoEntity entity= logic.obtenerTipoDocumentoPorId(Id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");
@@ -68,7 +68,7 @@ public class TipoDeDocumentoResource {
      */
     @PUT
     @Path("{id2: \\d+}")
-    public TipoDocumentoDTO actualizarTipoDeDocumento(TipoDocumentoDTO TipoDeDocumento,@PathParam("id2") int id){
+    public TipoDocumentoDTO actualizarTipoDeDocumento(TipoDocumentoDTO TipoDeDocumento,@PathParam("id2") long id){
         TipoDocumentoEntity entity = logic.obtenerTipoDocumentoPorId(id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");
@@ -81,7 +81,7 @@ public class TipoDeDocumentoResource {
      */
     @Path("{id3: \\d+}")
     @DELETE
-    public void eliminarTipoDeDocumento(@PathParam("id3") int id){
+    public void eliminarTipoDeDocumento(@PathParam("id3") long id){
         TipoDocumentoEntity entity = logic.obtenerTipoDocumentoPorId(id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");

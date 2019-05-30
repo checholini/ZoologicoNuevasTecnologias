@@ -37,7 +37,7 @@ public class EncargadoLogic {
      * @param id
      * @return
      */
-    public EncargadoEntity obtenerEncargadoPorId(int id) {
+    public EncargadoEntity obtenerEncargadoPorId(long id) {
         EncargadoEntity encargado = persistence.find(id);
         if (encargado == null) {
             throw new IllegalArgumentException("Encargado Solicitado no existe");
@@ -63,7 +63,7 @@ public class EncargadoLogic {
      * @param id
      * @return
      */
-    public EncargadoEntity actualizarEncargado(EncargadoEntity entity, int id) {
+    public EncargadoEntity actualizarEncargado(EncargadoEntity entity, long id) {
         EncargadoEntity encargado = persistence.update(entity);
         return encargado;
     }
@@ -73,7 +73,7 @@ public class EncargadoLogic {
      *
      * @param id
      */
-    public void eliminarEncargado(int id) {
+    public void eliminarEncargado(long id) {
         persistence.delete(id);
     }
 }

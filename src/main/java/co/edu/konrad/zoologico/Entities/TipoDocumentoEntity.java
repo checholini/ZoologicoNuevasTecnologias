@@ -28,7 +28,7 @@ public class TipoDocumentoEntity implements Serializable {
     @Id
     @Column(name = "id_tipo_documento")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idTipoDocumento;
+    private long idTipoDocumento;
     /**
      * Attr: Nombre tipo de documento
      */
@@ -38,11 +38,11 @@ public class TipoDocumentoEntity implements Serializable {
     public TipoDocumentoEntity() {
     }
 
-    public Long getIdTipoDocumento() {
+    public long getIdTipoDocumento() {
         return idTipoDocumento;
     }
 
-    public void setIdTipoDocumento(Long idTipoDocumento) {
+    public void setIdTipoDocumento(long idTipoDocumento) {
         this.idTipoDocumento = idTipoDocumento;
     }
 

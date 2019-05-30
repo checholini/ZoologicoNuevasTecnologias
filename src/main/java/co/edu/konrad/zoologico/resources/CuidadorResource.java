@@ -45,7 +45,7 @@ public class CuidadorResource {
      */
     @Path("{id: \\d+}")
     @GET
-    public CuidadorDTO obtenerCuidador(@PathParam("id") Long Id){
+    public CuidadorDTO obtenerCuidador(@PathParam("id") long Id){
         CuidadorEntity entity= logic.obtenerCuidadorPorId(Id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");
@@ -69,7 +69,7 @@ public class CuidadorResource {
      */
     @PUT
     @Path("{id2: \\d+}")
-    public CuidadorDTO actualizarCuidador(CuidadorDTO cuidador,@PathParam("id2") Long id){
+    public CuidadorDTO actualizarCuidador(CuidadorDTO cuidador,@PathParam("id2") long id){
         CuidadorEntity entity = logic.obtenerCuidadorPorId(id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");
@@ -82,7 +82,7 @@ public class CuidadorResource {
      */
     @Path("{id3: \\d+}")
     @DELETE
-    public void eliminarCuidador(@PathParam("id3") Long id){
+    public void eliminarCuidador(@PathParam("id3") long id){
         CuidadorEntity entity = logic.obtenerCuidadorPorId(id);
         if(entity == null){
             throw new RuntimeException("El producto solicitado no existe");

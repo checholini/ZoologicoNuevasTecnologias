@@ -37,7 +37,7 @@ public class TipoDocumentoLogic {
      * @param id
      * @return
      */
-    public TipoDocumentoEntity obtenerTipoDocumentoPorId(int id) {
+    public TipoDocumentoEntity obtenerTipoDocumentoPorId(long id) {
         TipoDocumentoEntity tipoDocumento = persistence.find(id);
         if (tipoDocumento == null) {
             throw new IllegalArgumentException("Tipo de documento Solicitado no existe");
@@ -63,7 +63,7 @@ public class TipoDocumentoLogic {
      * @param id
      * @return
      */
-    public TipoDocumentoEntity actualizarTipoDocumento(TipoDocumentoEntity entity, int id) {
+    public TipoDocumentoEntity actualizarTipoDocumento(TipoDocumentoEntity entity, long id) {
         TipoDocumentoEntity tipoDocumento = persistence.update(entity);
         return tipoDocumento;
     }
@@ -73,7 +73,7 @@ public class TipoDocumentoLogic {
      *
      * @param id
      */
-    public void eliminarTipoDocumento(int id) {
+    public void eliminarTipoDocumento(long id) {
         persistence.delete(id);
     }
 }
