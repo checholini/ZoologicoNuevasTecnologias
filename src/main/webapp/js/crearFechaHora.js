@@ -15,28 +15,35 @@
     if (getUrlParameter('id')) {
         $.ajax({
             method: 'GET',
-            url: '/ZoologicoNuevasTecnologias-develop/api/fechayhora' + getUrlParameter('id'),
+            //Cambiar Ruta al servicio necesitado
+            url: '/ZoologicoNuevasTecnologias-develop/api/fechayhora/' + getUrlParameter('id'),
             contentType: 'application/json',
             dataType: 'json'
         }).done(function (data) {
+            //Crear variables con los campos de la entidad y referenciar los campos en el formulario
             var idLugar = $('#idLugar').val(data.idLugar);
-            var fecha = $('#direccionLugar').val(data.fecha);
-            var hora = $('#direccionLugar').val(data.hora);
-            var id = data.id;
+            var fecha = $('#fecha').val(data.fecha);
+            var hora = $('#hora').val(data.hora);
+            var id = data.idFecHo;
             $('#crearBoton').text("Actualizar").click(function (event) {
+                console.log(id);
                 $.ajax({
                     method: 'PUT',
-                    url: '/ZoologicoNuevasTecnologias-develop/api/fechayhora' + id,
+                     //Cambiar Ruta al servicio necesitado
+                    url: '/ZoologicoNuevasTecnologias-develop/api/fechayhora/' + id,
                     contentType: 'application/json',
                     dataType: 'json',
                     data: JSON.stringify({
+                        //Mapear datos si hay un json dentro de otro, añadir "id": {"id" : valorId}
                         idFecHo: id,
-                        idLugar:idLugar,
-                        nomLugar: nomLugar,
-                        direccionLugar: direccionLugar
+                        idLugar:{
+                            idLugar : idLugar.val()
+                        },
+                        fecha: fecha.val(),
+                        hora: hora.val()
                     })
                 }).done(function (data) {
-                    window.location.href = '/ZoologicoNuevasTecnologias-develop';
+                    window.location.href = '/ZoologicoNuevasTecnologias-develop/shows.html';
                 }).fail(function (xhr, status, error) {
                     console.log.error;
                 });
@@ -47,23 +54,26 @@
         });
     } else {
         $('#crearBoton').click(function (event) {
-             var idLugar = $('#idLugar').val();
-            var fecha = $('#direccionLugar').val();
-            var hora = $('#direccionLugar').val();
+              //Crear variables con los camnpos de la entidad y referenciar los campos en el formulario
+            var idLugar = $('#idLugar').val();
+            var fecha = $('#fecha').val();
+            var hora = $('#hora').val();
+            //Mapear datos si hay un json dentro de otro, añadir "id": {"id" : valorId}
             $.ajax({
                 method: 'POST',
-                url: '/ZoologicoNuevasTecnologias-develop/api/fechayhora',
+                 //Cambiar Ruta al servicio necesitado
+                url: '/ZoologicoNuevasTecnologias-develop/api/lugar',
                 contentType: 'application/json',
                 dataType: 'json',
                 data: JSON.stringify({
                         idLugar:{
-                            idLugar: idLugar
+                            idLugar : idLugar.val()
                         },
-                        nomLugar: nomLugar,
-                        direccionLugar: direccionLugar
+                        fecha: fecha.val(),
+                        hora: hora.val()
                 })
             }).done(function (data) {
-                window.location.href = '/ZoologicoNuevasTecnologias-develop';
+                window.location.href = '/ZoologicoNuevasTecnologias-develop/shows.html';
             }).fail(function (xhr, status, error) {
                 console.log(error);
             });
