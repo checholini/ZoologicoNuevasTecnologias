@@ -15,26 +15,28 @@
     if (getUrlParameter('id')) {
         $.ajax({
             method: 'GET',
-            url: '/ZoologicoNuevasTecnologias/api/lugar' + getUrlParameter('id'),
+            url: '/ZoologicoNuevasTecnologias-develop/api/fechayhora' + getUrlParameter('id'),
             contentType: 'application/json',
             dataType: 'json'
         }).done(function (data) {
-            var nomLugar = $('#nomLugar').val(data.nomLugar);
-            var direccionLugar = $('#direccionLugar').val(data.direccionLugar);
+            var idLugar = $('#idLugar').val(data.idLugar);
+            var fecha = $('#direccionLugar').val(data.fecha);
+            var hora = $('#direccionLugar').val(data.hora);
             var id = data.id;
             $('#crearBoton').text("Actualizar").click(function (event) {
                 $.ajax({
                     method: 'PUT',
-                    url: '/ZoologicoNuevasTecnologias/api/lugar' + id,
+                    url: '/ZoologicoNuevasTecnologias-develop/api/fechayhora' + id,
                     contentType: 'application/json',
                     dataType: 'json',
                     data: JSON.stringify({
-                        idLugar:id,
+                        idFecHo: id,
+                        idLugar:idLugar,
                         nomLugar: nomLugar,
                         direccionLugar: direccionLugar
                     })
                 }).done(function (data) {
-                    window.location.href = '/ZoologicoNuevasTecnologias';
+                    window.location.href = '/ZoologicoNuevasTecnologias-develop';
                 }).fail(function (xhr, status, error) {
                     console.log.error;
                 });
@@ -45,19 +47,23 @@
         });
     } else {
         $('#crearBoton').click(function (event) {
-            var nomLugar = $('#nomLugar').val();
-            var direccionLugar = $('#direccionLugar').val();
+             var idLugar = $('#idLugar').val();
+            var fecha = $('#direccionLugar').val();
+            var hora = $('#direccionLugar').val();
             $.ajax({
                 method: 'POST',
-                url: '/ZoologicoNuevasTecnologias/api/lugar',
+                url: '/ZoologicoNuevasTecnologias-develop/api/fechayhora',
                 contentType: 'application/json',
                 dataType: 'json',
                 data: JSON.stringify({
+                        idLugar:{
+                            idLugar: idLugar
+                        },
                         nomLugar: nomLugar,
                         direccionLugar: direccionLugar
                 })
             }).done(function (data) {
-                window.location.href = '/ZoologicoNuevasTecnologias';
+                window.location.href = '/ZoologicoNuevasTecnologias-develop';
             }).fail(function (xhr, status, error) {
                 console.log(error);
             });

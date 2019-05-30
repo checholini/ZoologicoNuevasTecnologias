@@ -15,12 +15,13 @@
     if (getUrlParameter('id')) {
         $.ajax({
             method: 'GET',
-            url: '/ZoologicoNuevasTecnologias/api/lugar' + getUrlParameter('id'),
+            url: '/ZoologicoNuevasTecnologias/api/Rating_Show' + getUrlParameter('id'),
             contentType: 'application/json',
             dataType: 'json'
         }).done(function (data) {
-            var nomLugar = $('#nomLugar').val(data.nomLugar);
-            var direccionLugar = $('#direccionLugar').val(data.direccionLugar);
+            var idShow = $('#idShow').val(data.idShow);
+            var rating = $('#zoo').val(data.rating);
+            var comentaria = $('#comentaria').val(data.comentario);
             var id = data.id;
             $('#crearBoton').text("Actualizar").click(function (event) {
                 $.ajax({
@@ -29,9 +30,11 @@
                     contentType: 'application/json',
                     dataType: 'json',
                     data: JSON.stringify({
-                        idLugar:id,
-                        nomLugar: nomLugar,
-                        direccionLugar: direccionLugar
+                        idRatingShow:id,
+                        idShow: {
+                            idShow : idShow},
+                        rating : rating,
+                        comentario : comentaria
                     })
                 }).done(function (data) {
                     window.location.href = '/ZoologicoNuevasTecnologias';
@@ -45,16 +48,20 @@
         });
     } else {
         $('#crearBoton').click(function (event) {
-            var nomLugar = $('#nomLugar').val();
-            var direccionLugar = $('#direccionLugar').val();
+           var idShow = $('#idShow').val();
+            var rating = $('#zoo').val();
+            var comentaria = $('#comentaria').val();
             $.ajax({
                 method: 'POST',
-                url: '/ZoologicoNuevasTecnologias/api/lugar',
+                url: '/ZoologicoNuevasTecnologias/api/Rating_Show',
                 contentType: 'application/json',
                 dataType: 'json',
                 data: JSON.stringify({
-                        nomLugar: nomLugar,
-                        direccionLugar: direccionLugar
+                        idZoo: {
+                        idShow: {
+                            idShow : idShow},
+                        rating : rating,
+                        comentario : comentaria
                 })
             }).done(function (data) {
                 window.location.href = '/ZoologicoNuevasTecnologias';

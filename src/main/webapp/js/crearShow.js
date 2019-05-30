@@ -15,12 +15,13 @@
     if (getUrlParameter('id')) {
         $.ajax({
             method: 'GET',
-            url: '/ZoologicoNuevasTecnologias/api/lugar' + getUrlParameter('id'),
+            url: '/ZoologicoNuevasTecnologias/api/show' + getUrlParameter('id'),
             contentType: 'application/json',
             dataType: 'json'
         }).done(function (data) {
-            var nomLugar = $('#nomLugar').val(data.nomLugar);
-            var direccionLugar = $('#direccionLugar').val(data.direccionLugar);
+            var idEncargado = $('#idEncargado').val(data.idEncargado);
+            var zoo = $('#zoo').val(data.idZoo);
+            var nomShow = $('#nomShow').val(data.nomShow);
             var id = data.id;
             $('#crearBoton').text("Actualizar").click(function (event) {
                 $.ajax({
@@ -29,9 +30,13 @@
                     contentType: 'application/json',
                     dataType: 'json',
                     data: JSON.stringify({
-                        idLugar:id,
-                        nomLugar: nomLugar,
-                        direccionLugar: direccionLugar
+                        idShow:id,
+                        idZoo: {
+                            idZoo : zoo},
+                        idEncargado: {
+                            idEncargado: idEncargado
+                        },
+                        nomShow : nomShow
                     })
                 }).done(function (data) {
                     window.location.href = '/ZoologicoNuevasTecnologias';
@@ -45,16 +50,21 @@
         });
     } else {
         $('#crearBoton').click(function (event) {
-            var nomLugar = $('#nomLugar').val();
-            var direccionLugar = $('#direccionLugar').val();
+            var idEncargado = $('#idEncargado').val();
+            var zoo = $('#zoo').val();
+            var nomShow = $('#nomShow').val();
             $.ajax({
                 method: 'POST',
-                url: '/ZoologicoNuevasTecnologias/api/lugar',
+                url: '/ZoologicoNuevasTecnologias/api/show',
                 contentType: 'application/json',
                 dataType: 'json',
                 data: JSON.stringify({
-                        nomLugar: nomLugar,
-                        direccionLugar: direccionLugar
+                        idZoo: {
+                            idZoo : zoo},
+                        idEncargado: {
+                            idEncargado: idEncargado
+                        },
+                        nomShow : nomShow
                 })
             }).done(function (data) {
                 window.location.href = '/ZoologicoNuevasTecnologias';
