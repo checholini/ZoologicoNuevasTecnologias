@@ -54,7 +54,7 @@ public class AnimalResource {
         if(animalE == null){
             throw new RuntimeException("El animal con id "+id+" no existe");
         }
-        return new AnimalDTO(animal.createAnimal(animalE));
+        return new AnimalDTO(animalE);
     }
 
     /**
@@ -70,16 +70,17 @@ public class AnimalResource {
     /**
      * Actualiza un alimento
      * @param id
+     * @param animalDTO
      * @return animalDTO actualizado
      */
     @PUT
     @Path("{id: \\d+}")
-    public AnimalDTO updateanimal(@PathParam("id") int id){
+    public AnimalDTO updateanimal(@PathParam("id") int id, AnimalDTO animalDTO){
         AnimalEntity animalE = animal.getanimalById(id);
         if(animalE == null){
             throw new RuntimeException("El animal con id "+id+" no existe");
         }
-        return new AnimalDTO(animal.updateAnimal(animalE,id));
+        return new AnimalDTO(animal.updateAnimal(animalDTO.toEntity(),id));
     }
 
     /**

@@ -2,7 +2,7 @@
     $(document).ready(function (event) {
         $.ajax({
             method: 'GET',
-            url: '/ZoologicoNuevasTecnologias-develop/api/fechayhora',
+            url: '/ZoologicoNuevasTecnologias/api/fechayhora',
             dataType: 'json',
             contentType: 'application/json'
         }).done(function (data) {
@@ -21,7 +21,7 @@
                 var botonEliminar = $('<button>').addClass('btn btn-danger');
                 botonEliminar.text('Eliminar').attr('data-id',data[i].idFecHo);//poner la id de la tabla o entidad
                 botonEliminar.click(eliminar);
-                var botonActualizar = $('<a href="/ZoologicoNuevasTecnologias-develop/forms/crearFechayhora.html?id='+ data[i].idFecHo+'">').addClass('btn btn-primary');//poner la id de la tabla o entidad
+                var botonActualizar = $('<a href="/ZoologicoNuevasTecnologias/forms/crearFechayhora.html?id='+ data[i].idFecHo+'">').addClass('btn btn-primary');//poner la id de la tabla o entidad
                 //enrutar a la pagina de crear de cada servicio
                 botonActualizar.text('Actualizar');
 
@@ -31,6 +31,8 @@
                 tableRow.append(idLugar);
                 tableRow.append(fecha);
                 tableRow.append(hora);
+                tableRow.append(acciones);
+
 
                 $('#tableFechaHora table tbody').append(tableRow);//la id del div donde se encuentra la tabla cambiarlo a gusto
             }
@@ -43,7 +45,7 @@
     function eliminar(event){
         $.ajax({
             method: 'DELETE',
-            url:'/ZoologicoNuevasTecnologias-develop/api/lugar/'+$(this).attr('data-id'),//enrutar con el servicio requerido
+            url:'/ZoologicoNuevasTecnologias/api/fechayhora/'+$(this).attr('data-id'),//enrutar con el servicio requerido
             contentType: 'application/json',
             dataType: 'json'
         }).done(function(data){

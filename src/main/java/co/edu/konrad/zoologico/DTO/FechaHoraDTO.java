@@ -58,6 +58,8 @@ public class FechaHoraDTO {
         FechaHoraEntity Entity = new FechaHoraEntity();
        Entity.setIdFecHo(this.idFecHo);
        Entity.setFecha(this.fecha);
+       Entity.setHora(this.hora);
+       Entity.setIdLugar(this.idLugar);
         return Entity;
     }
 
