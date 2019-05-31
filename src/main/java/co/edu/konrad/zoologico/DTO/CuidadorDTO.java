@@ -21,6 +21,7 @@ public class CuidadorDTO {
     
     private String fechaNacimientoCuidador;
     private DocumentoEntity idDocumento;
+    private String nombreCuidador;
     
 
     public CuidadorDTO() {
@@ -34,6 +35,7 @@ public class CuidadorDTO {
         this.idCuidador = cuidador.getIdCuidador();
         this.fechaNacimientoCuidador = cuidador.getFechaNacimientoCuidador();
         this.idDocumento = cuidador.getIdDocumento();
+        this.nombreCuidador = cuidador.getNombreCuidador();
     }
     
     /**
@@ -56,8 +58,17 @@ public class CuidadorDTO {
         CuidadorEntity cuidadorEntity = new CuidadorEntity();
         cuidadorEntity.setIdCuidador(this.idCuidador);
         cuidadorEntity.setFechaNacimientoCuidador(this.fechaNacimientoCuidador);
-        cuidadorEntity.setIdCuidador(this.idCuidador);
+        cuidadorEntity.setIdDocumento(this.idDocumento);
+        cuidadorEntity.setNombreCuidador(this.nombreCuidador);
         return cuidadorEntity;
+    }
+
+    public String getNombreCuidador() {
+        return nombreCuidador;
+    }
+
+    public void setNombreCuidador(String nombreCuidador) {
+        this.nombreCuidador = nombreCuidador;
     }
 
     public long getIdCuidador() {

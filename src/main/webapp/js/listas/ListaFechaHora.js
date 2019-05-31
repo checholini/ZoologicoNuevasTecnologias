@@ -11,7 +11,7 @@
               var nombre =data[i].idLugar.nomLugar;
               var fecha =data[i].fecha;
               var hora =data[i].hora;
-              var option = "<option value=" + id + ">" + nombre + hora + fecha + "</option>";
+              var option = "<option value=" + id + ">" + nombre + " a las "+ hora + " del "+ fecha + "</option>";
               console.log(option);
               $( "#fecha" ).append(option);
             }

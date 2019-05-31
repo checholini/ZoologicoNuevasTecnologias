@@ -2,7 +2,7 @@
     $(document).ready(function (event) {
         $.ajax({
             method: 'GET',
-            url: '/ZoologicoNuevasTecnologias/api/zoo',
+            url: '/ZoologicoNuevasTecnologias/api/zoologico',
             dataType: 'json',
             contentType: 'application/json'
         }).done(function (data) {

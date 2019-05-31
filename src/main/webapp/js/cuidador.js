@@ -12,6 +12,10 @@
                 //cada campo con su correspondiente valor
                 var fechaNacimientoCuidador = $('<td>');
                 fechaNacimientoCuidador.text(data[i].fechaNacimientoCuidador);
+                var nombre = $('<td>');
+                nombre.text(data[i].nombreCuidador);
+                var doc = $('<td>');
+                doc.text(data[i].idDocumento.nomDocumento);
 
                 var acciones = $('<td>');
                 var botonEliminar = $('<button>').addClass('btn btn-danger');
@@ -24,7 +28,9 @@
                 acciones.append(botonEliminar);
                 acciones.append(botonActualizar);
 
+                tableRow.append(nombre);
                 tableRow.append(fechaNacimientoCuidador);
+                tableRow.append(doc);
                 tableRow.append(acciones);
 
                 $('#tableCuidador table tbody').append(tableRow);//la id del div donde se encuentra la tabla cambiarlo a gusto
