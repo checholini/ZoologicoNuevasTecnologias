@@ -40,6 +40,17 @@ public class CuidadorEntity implements Serializable{
     @ManyToOne
     @JoinColumn(name = "id_documento")
     private DocumentoEntity idDocumento;
+    
+    @Column(name = "nom_cuidador")
+    private String nombreCuidador;
+
+    public String getNombreCuidador() {
+        return nombreCuidador;
+    }
+
+    public void setNombreCuidador(String nombreCuidador) {
+        this.nombreCuidador = nombreCuidador;
+    }
 
     public CuidadorEntity() {
     }

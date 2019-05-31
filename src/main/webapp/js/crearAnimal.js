@@ -87,7 +87,7 @@
                     })
             }).done(function (data) {
               console.log(nombre);
-                //window.location.href = '/ZoologicoNuevasTecnologias/animales.html';
+                window.location.href = '/ZoologicoNuevasTecnologias/animales.html';
             }).fail(function (xhr, status, error) {
                 console.log(error);
             });
