@@ -11,7 +11,7 @@
                 // División de la fila
                 //cada campo con su correspondiente valor
                 var idEncargado = $('<td>');
-                idEncargado.text(data[i].idEncargado.idDocumento.nomDocumento);
+                idEncargado.text(data[i].idEncargado.nomEncargado);
                 var zoo = $('<td>');
                 zoo.text(data[i].idZoo.nomZoo);
                 var nomShow = $('<td>');

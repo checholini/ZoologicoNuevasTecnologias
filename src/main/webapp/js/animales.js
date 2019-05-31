@@ -23,7 +23,7 @@
                 var descripcion = $('<td>');
                 descripcion.text(data[i].descripcionAnimal);
                 var cuidador = $('<td>');
-                cuidador.text(data[i].idCuidador.idCuidador);
+                cuidador.text(data[i].idCuidador.nombreCuidador);
 
 
                 var acciones = $('<td>');

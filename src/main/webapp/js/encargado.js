@@ -13,7 +13,7 @@
                 var telefonoEncargado = $('<td>');
                 telefonoEncargado.text(data[i].telefonoEncargado);
                 var doc = $('<td>');
-                doc.text(data[i].idDocumento.idDocumento);
+                doc.text(data[i].idDocumento.nomDocumento);
                 var nombre = $('<td>');
                 nombre.text(data[i].nombreEncargado);
 

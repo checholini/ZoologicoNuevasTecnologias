@@ -8,7 +8,7 @@
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
                 var id = data[i].idCuidador;
-                var nombre = data[i].idCuidador;
+                var nombre = data[i].nombreCuidador;
                 var option = "<option value=" + id + ">" + nombre + "</option>"
                 console.log(option);
                 $( "#cuidador" ).append(option);
