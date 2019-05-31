@@ -1,19 +1,30 @@
-
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lugar</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     </head>
     <body>
+        <div style="width:100%; height: 100%" data-natural-width="1240" data-natural-heigth="720" data-parallaxing
+        data-parallaxing-img="https://source.unsplash.com/1240x720/?bird" class="cards">
+        <div class="container" style="height: 30px"></div>
+        <div class="container" style="width: 50%">
+
+        <div class="col p-4 d-flex flex-column position-static" style="background: #FFFFFF">
+
         <div class="form-group">
-            <label class="control-label">Nombre</label>
+            <label class="control-label">Nombre del lugar</label>
             <input class="form-control" type="text" id="nomLugar">
-            <label class="control-label">Dir</label>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Direccion del lugar</label>
             <input class="form-control" type="text" id="direccionLugar">
         </div>
-        <button id="crearBoton">Crear Lugar</button>
-        <script src="../js/crearLugar.js" type="text/javascript"></script>
+        <button class="btn btn-primary btn-lg" id="crearBoton">Crear Lugar</button>
+                <a role="button" class="btn btn-danger btn-lg"
+                    href="/ZoologicoNuevasTecnologias/shows.html">cancelar</a>
+    </div>
+            <script src="../js/crearLugar.js" type="text/javascript"></script>
     </body>
 </html>
