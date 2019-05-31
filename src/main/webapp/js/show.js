@@ -21,7 +21,7 @@
                 var botonEliminar = $('<button>').addClass('btn btn-danger');
                 botonEliminar.text('Eliminar').attr('data-id',data[i].idShow);//poner la id de la tabla o entidad
                 botonEliminar.click(eliminar);
-                var botonActualizar = $('<a href="/ZoologicoNuevasTecnologias/forms/crearShow.html?id='+ data[i].idFecHo+'">').addClass('btn btn-primary');//poner la id de la tabla o entidad
+                var botonActualizar = $('<a href="/ZoologicoNuevasTecnologias/forms/crearShow.html?id='+ data[i].idShow+'">').addClass('btn btn-primary');//poner la id de la tabla o entidad
                 //enrutar a la pagina de crear de cada servicio
                 botonActualizar.text('Actualizar');
 
@@ -29,8 +29,8 @@
                 acciones.append(botonActualizar);
 
                 tableRow.append(idEncargado);
-                tableRow.append(zoo);
                 tableRow.append(nomShow);
+                tableRow.append(zoo);
                 tableRow.append(acciones);
 
                 $('#tableShow table tbody').append(tableRow);//la id del div donde se encuentra la tabla cambiarlo a gusto

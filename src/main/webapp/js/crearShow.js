@@ -38,14 +38,14 @@
                         //Mapear datos si hay un json dentro de otro, añadir "id": {"id" : valorId}
                         idShow:id,
                         idZoo: {
-                            idZoo : zoo},
+                            idZoo : zoo.val()},
                         idEncargado: {
-                            idEncargado: idEncargado
+                            idEncargado: idEncargado.val()
                         },
                         idFecHo:{
-                          idFecHo: fecha
+                          idFecHo: fecha.val()
                         },
-                        nomShow : nomShow
+                        nomShow : nomShow.val()
                     })
                 }).done(function (data) {
                     window.location.href = '/ZoologicoNuevasTecnologias/shows.html';

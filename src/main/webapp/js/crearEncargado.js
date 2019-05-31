@@ -22,6 +22,8 @@
         }).done(function (data) {
             //Crear variables con los camnpos de la entidad y referenciar los campos en el formulario
             var telefonoEncargado = $('#telefonoEncargado').val(data.telefonoEncargado);
+            var doc = $('#doc').val(data.idDocumento.idDocumento);
+            var nombre = $('#nombre').val(data.nombreEncargado);
             var id = data.idEncargado;
             $('#CrearBoton').text("Actualizar").click(function (event) {
               console.log(id);
@@ -35,6 +37,8 @@
                     data: JSON.stringify({
                         idEncargado:id,
                         telefonoEncargado: telefonoEncargado.val(),
+                        nombreEncargado: nombre.val(),
+                        idDocumento:{idDocumento: doc.val()}
                     })
                 }).done(function (data) {
                     window.location.href = '/ZoologicoNuevasTecnologias/conocenos.html';
@@ -50,6 +54,8 @@
         $('#CrearBoton').click(function (event) {
             //Crear variables con los camnpos de la entidad y referenciar los campos en el formulario
             var telefonoEncargado = $('#telefonoEncargado').val();
+            var doc = $('#doc').val();
+            var nombre = $('#nombre').val();
             //Mapear datos si hay un json dentro de otro, añadir "id": {"id" : valorId}
             $.ajax({
                 method: 'POST',
@@ -59,6 +65,8 @@
                 dataType: 'json',
                 data: JSON.stringify({
                         telefonoEncargado: telefonoEncargado,
+                        nombreEncargado: nombre,
+                        idDocumento:{idDocumento: doc}
                 })
             }).done(function (data) {
                 window.location.href = '/ZoologicoNuevasTecnologias/conocenos.html';

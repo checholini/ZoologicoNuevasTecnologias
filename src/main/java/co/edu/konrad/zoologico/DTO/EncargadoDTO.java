@@ -21,7 +21,7 @@ public class EncargadoDTO {
     private long idEncargado;
     
     private String telefonoEncargado;
-    
+    private String nombreEncargado;    
      private DocumentoEntity idDocumento;
     
 
@@ -36,6 +36,7 @@ public class EncargadoDTO {
         this.idEncargado = encargado.getIdEncargado();
         this.telefonoEncargado = encargado.getTelefonoEncargado();
         this.idDocumento = encargado.getIdDocumento();
+        this.nombreEncargado = encargado.getNomEncargado();
     }
     
     /**
@@ -59,9 +60,18 @@ public class EncargadoDTO {
         encargadoEntity.setIdEncargado(this.idEncargado);
         encargadoEntity.setTelefonoEncargado(this.telefonoEncargado);
         encargadoEntity.setIdDocumento(this.idDocumento);
+        encargadoEntity.setNomEncargado(this.nombreEncargado);
         return encargadoEntity;
     }
 
+    public String getNombreEncargado() {
+        return nombreEncargado;
+    }
+
+    public void setNombreEncargado(String nombreEncargado) {
+        this.nombreEncargado = nombreEncargado;
+    }
+    
     public long getIdEncargado() {
         return idEncargado;
     }

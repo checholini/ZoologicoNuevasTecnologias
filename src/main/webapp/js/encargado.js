@@ -12,6 +12,10 @@
                 //cada campo con su correspondiente valor
                 var telefonoEncargado = $('<td>');
                 telefonoEncargado.text(data[i].telefonoEncargado);
+                var doc = $('<td>');
+                doc.text(data[i].idDocumento.idDocumento);
+                var nombre = $('<td>');
+                nombre.text(data[i].nombreEncargado);
 
                 var acciones = $('<td>');
                 var botonEliminar = $('<button>').addClass('btn btn-danger');
@@ -24,7 +28,9 @@
                 acciones.append(botonEliminar);
                 acciones.append(botonActualizar);
 
+                tableRow.append(nombre);
                 tableRow.append(telefonoEncargado);
+                tableRow.append(doc);
                 tableRow.append(acciones);
 
                 $('#tableEncargado table tbody').append(tableRow);//la id del div donde se encuentra la tabla cambiarlo a gusto

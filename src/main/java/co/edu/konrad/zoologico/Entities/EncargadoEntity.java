@@ -42,7 +42,18 @@ public class EncargadoEntity implements Serializable {
     @OneToOne
     @JoinColumn(name = "id_documento")
     private DocumentoEntity idDocumento;
+    
+    @Column(name = "nombre_encargado")
+    private String nomEncargado;
 
+    public String getNomEncargado() {
+        return nomEncargado;
+    }
+
+    public void setNomEncargado(String nomEncargado) {
+        this.nomEncargado = nomEncargado;
+    }
+    
     public EncargadoEntity() {
     }
 
